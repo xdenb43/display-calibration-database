@@ -34,23 +34,24 @@ Official product page:  <https://www.dahuasecurity.com/mena/products/All-Product
 
 ## Calibration  
 
-Calibration objective:
-Visual comfort with reduced eye strain during prolonged use. 
+Calibration objective: **Visual comfort with reduced eye strain during prolonged use.**  
 
-### Calibration Environment  
+### Calibration environment  
 
-| Parameter        | Value        |
-| ---------------- | ------------ |
-| Calibration date | 2026-06-30   |
-| Instrument       | Spyder X     |
-| Software         | DisplayCAL   |
-| White point      | D65 (6500 K) |
-| Gamma            | 2.2          |
-| Target luminance | 120 cd/m²    |
+| Parameter          | Value        |
+| ------------------ | ------------ |
+| Calibration date   | 2026-06-30   |
+| Instrument         | Spyder X     |
+| Software           | DisplayCAL   |
+|                    |              |  
+| Target white point | D65 (6500 K) |
+| Target gamma       | 2.2          |
+| Target luminance   | 120 cd/m²    |
 
 ---  
 
-### Calibrated monitor settings:
+### OSD settings  
+
 - Display menu:  
     - Brightness: 22  
     - Contrast: 50  
@@ -69,8 +70,20 @@ Visual comfort with reduced eye strain during prolonged use.
     - HDR OFF  
 - Refresh Rate: 120 Hz fixed
 
+## Downloads
 
-##  OSD Brightness (%) vs. Luminance (cd/m²)  
+> [!IMPORTANT]
+> The ICC profile was created using the OSD settings listed above.
+> Different monitor settings (brightness, RGB gain, contrast, etc.) may reduce color accuracy.
+
+### Calibration
+- [**ICC profile**](DHI-LM27-E331_120cdm2_D6500_2.2_M-S_XYZLUT_MTX.icm)
+
+### Reports  
+- [**Verification report (HTML)**](Measurement_Report_DHI-LM27-E331.html)
+- [**Verification report (PDF)**](Measurement_Report_DHI-LM27-E331.pdf)
+
+## Brightness Response Curve  
 
 ![Brightness vs. Luminance](brightness_vs_luminance_dhi_lm27_e331.png) 
 
