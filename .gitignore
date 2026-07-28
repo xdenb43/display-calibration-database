@@ -1,0 +1,18 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Display calibration temporary files
+*.log
+
+# Python cache (for possible future tools)
+__pycache__/
+*.pyc
