@@ -77,7 +77,7 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 > Different monitor settings (brightness, RGB gain, contrast, etc.) may reduce color accuracy.
 
 ### Calibration
-- [ICC profile](DHI-LM27-E331_120cdm2_D6500_2.2_M-S_XYZLUT_MTX.icm)
+- [ICC profile](https://xdenb43.github.io/display-calibration-database/monitors/dahua-lm27e331/DHI-LM27-E331_120cdm2_D6500_2.2_M-S_XYZLUT_MTX.icm)
 
 ### Reports  
 - [Verification report (HTML)](https://xdenb43.github.io/display-calibration-database/monitors/dahua-lm27e331/Measurement_Report_DHI-LM27-E331.html)
