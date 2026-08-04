@@ -4,6 +4,8 @@ Database of display calibration settings focused on visual comfort and eye healt
 
 This repository contains ICC/ICM color profiles, display verification reports and engineering documentation for monitors, laptops, smartphones and TVs.
 
+[![License](https://img.shields.io/github/license/xdenb43/display-calibration-database)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/xdenb43/display-calibration-database)](https://github.com/xdenb43/display-calibration-database/commits/main)
 ---
 
 ## Repository structure
