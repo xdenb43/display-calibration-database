@@ -20,7 +20,6 @@ Official product page:  <https://consumer.huawei.com/ru/phones/pura80/>
 | Typical brightness  | 1600 nits (HBM, typ.)    |
 | Peak brightness     | 2800 nits                |
 | Contrast Ratio      | Infinite (OLED)          |
-ы
 
 ### Color characteristics
 - Wide Color Gamut (WCG) declared by manufacturer  
@@ -37,16 +36,16 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 
 ### Recommended System Settings (Eye Comfort)
 
-| Parameter                                    | Value                       | Reason                                                                                                                                     |
-| -------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Refresh Rate (Частота обновления)            | Fixed (Standard or 120 Hz)  | Provides a good balance between smoothness, battery life and display stability.                                                            |
-| Flicker Reduction (Снижение мерцания)        | On (Вкл.)                   | Reduces perceived display flicker, helping to minimize eye fatigue during prolonged use.                                                   |
-| Color Mode (Цветовой режим)                  | Normal (Обычный)            | Preserves natural color reproduction without excessive saturation.                                                                         |
-| Dark Mode (Тёмный режим)                     | Always On (Всегда включён)  | Reduces overall screen luminance and improves viewing comfort, especially in dim environments.                                             |
-| Font Weight (Жирность текста)                | +2…+3 steps (+2…+3 деления) | Improves text readability without increasing the overall UI scaling.                                                                       |
-| Auto Brightness (Автояркость)                | On (Вкл.)                   | Automatically adjusts screen brightness to ambient lighting, reducing unnecessary eye strain.                                              |
-| Eye Comfort / Eye Protection (Защита зрения) | Off (Выкл.)                 | Maintains a neutral white point and accurate color reproduction. Enable only when warmer colors are preferred, such as during evening use. |
-| Vivid Color Mode (Яркие цвета)               | Off (Выкл.)                 | Avoids artificially boosted saturation for a more natural and less fatiguing image.                                                        |
-| Font Size (Размер текста)                    | Default (По умолчанию)      | Preserves the intended interface layout while maintaining comfortable readability.                                                         |
+| Parameter                                    | Value                       | Reason                                                                                                                                                                                    |
+| -------------------------------------------- | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Refresh Rate (Частота обновления)            | Fixed (Standard or 120 Hz)  | Using a fixed refresh rate prevents frequent switching between refresh rates, providing more consistent display behavior and potentially reducing visual discomfort during prolonged use. |
+| Flicker Reduction (Снижение мерцания)        | On (Вкл.)                   | Reduces perceived display flicker, helping to minimize eye fatigue during prolonged use.                                                                                                  |
+| Color Mode (Цветовой режим)                  | Normal (Обычный)            | Preserves natural color reproduction without excessive saturation.                                                                                                                        |
+| Dark Mode (Тёмный режим)                     | Always On (Всегда включён)  | Reduces overall screen luminance and improves viewing comfort, especially in dim environments.                                                                                            |
+| Font Weight (Жирность текста)                | +2…+3 steps (+2…+3 деления) | Improves text readability without increasing the overall UI scaling.                                                                                                                      |
+| Auto Brightness (Автояркость)                | On (Вкл.)                   | Automatically adjusts screen brightness to ambient lighting, reducing unnecessary eye strain.                                                                                             |
+| Eye Comfort / Eye Protection (Защита зрения) | Off (Выкл.)                 | Maintains a neutral white point and accurate color reproduction. Enable only when warmer colors are preferred, such as during evening use.                                                |
+| Vivid Color Mode (Яркие цвета)               | Off (Выкл.)                 | Avoids artificially boosted saturation for a more natural and less fatiguing image.                                                                                                       |
+| Font Size (Размер текста)                    | Default (По умолчанию)      | Preserves the intended interface layout while maintaining comfortable readability.                                                                                                        |
 
 ---
