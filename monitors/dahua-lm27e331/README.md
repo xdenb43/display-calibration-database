@@ -30,8 +30,6 @@ Official product page:  <https://www.dahuasecurity.com/mena/products/All-Product
     - DCI-P3: Not specified  
 - Color depth: 8 bit + FRC  
 
----
-
 ## Calibration  
 
 Calibration objective: **Visual comfort with reduced eye strain during prolonged use.**  
@@ -47,8 +45,6 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 | Target white point | D65 (6500 K) |
 | Target gamma       | 2.2          |
 | Target luminance   | 120 cd/m²    |
-
----  
 
 ### OSD settings  
 
@@ -111,5 +107,3 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 |          50          |        197        |
 |          75          |        276        |
 |         100          |        351        |
-
----

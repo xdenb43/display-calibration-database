@@ -26,13 +26,9 @@ Official product page:  <https://consumer.huawei.com/ru/phones/pura80/>
     - 100% DCI-P3 (claimed)  
 - Color depth: 10-bit (1.07 billion colors)    
 
----
-
 ## Calibration  
 
 Calibration objective: **Visual comfort with reduced eye strain during prolonged use.**  
-
----  
 
 ### Recommended System Settings (Eye Comfort)
 
@@ -48,4 +44,3 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 | Vivid Color Mode (Яркие цвета)               | Off (Выкл.)                 | Avoids artificially boosted saturation for a more natural and less fatiguing image.                                                                                                       |
 | Font Size (Размер текста)                    | Default (По умолчанию)      | Preserves the intended interface layout while maintaining comfortable readability.                                                                                                        |
 
----

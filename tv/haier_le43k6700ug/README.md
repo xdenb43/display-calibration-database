@@ -23,9 +23,8 @@ Official product page: <https://haieronline.ru/catalog/electronics/tvs/le43k6700
 
 
 ### Color characteristics
-Not specified
 
----
+Not specified
 
 ## Calibration  
 
@@ -42,8 +41,6 @@ Calibration objective: **SDR Rec. 709** with _universal_ luminance **140 cd/m²*
 | Target white point | D65 (6500 K) |
 | Target gamma       | 2.2          |
 | Target luminance   | 140 cd/m²    |
-
----  
 
 ### OSD settings  
 
@@ -74,5 +71,3 @@ Calibration objective: **SDR Rec. 709** with _universal_ luminance **140 cd/m²*
 - An alternative launcher improves UI responsiveness  
 - Factory white point: ~9700 K  
 - Online 4K playback may be sluggish  
-
----
