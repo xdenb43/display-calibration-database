@@ -76,7 +76,7 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 - [ICC profile](https://xdenb43.github.io/display-calibration-database/monitors/dahua-lm27-e331/DHI-LM27-E331_120cdm2_D6500_2.2_M-S_XYZLUT_MTX.icm)
 
 ### Reports  
-- <a href="https://xdenb43.github.io/display-calibration-database/monitors/dahua-lm27-e331/Measurement_Report_DHI-LM27-E331.html" target="_blank" rel="noopener noreferrer">Verification report (HTML)</a>
+- [Verification report (HTML)](https://xdenb43.github.io/display-calibration-database/monitors/dahua-lm27-e331/Measurement_Report_DHI-LM27-E331.html)
 - [Verification report (PDF)](Measurement_Report_DHI-LM27-E331.pdf)
 
 ## Brightness Response Curve  
