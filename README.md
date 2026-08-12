@@ -63,10 +63,6 @@ The repository follows a physics-first and verification-first approach.
 - Verification reports and measurements are provided whenever available to document the resulting display behavior.  
 - Changes to calibration or configuration parameters are made only after verification rather than by assumption.  
 
-<p align="right">
-  <a href="#table-of-contents">⬆️ Back to TOC</a>
-</p>
-
 ## Disclaimer
 
 Calibration and display configuration results are device-specific.  
@@ -79,3 +75,6 @@ Unless otherwise stated, all documentation is released under the MIT License.
 
 Calibration profiles, verification reports, measurements and configuration recommendations are provided for educational and research purposes.  
 
+<p align="right">
+  <a href="#table-of-contents">⬆️ Back to TOC</a>
+</p>
