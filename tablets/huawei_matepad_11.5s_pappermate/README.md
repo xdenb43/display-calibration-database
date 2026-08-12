@@ -12,7 +12,7 @@ Official product page: <https://consumer.huawei.com/ru/tablets/matepad-11-5-s/sp
 - [Specifications](#specifications)
   - [Color characteristics](#color-characteristics)
 - [Daily Use Configuration](#daily-use-configuration)
-  - [Recommended System Settings (Eye Comfort)](#recommended-system-settings-eye-comfort--work--drawing)
+  - [Recommended System Settings (Eye Comfort + Work + Drawing)](#recommended-system-settings-eye-comfort--work--drawing)
 
 ## Specifications  
 
