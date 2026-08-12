@@ -34,7 +34,7 @@ Official product page:  <https://consumer.huawei.com/ru/phones/pura80/>
 
 ## Calibration  
 
-The priority here is: ** readability → absence of visual strain → luminance control → other parameters.**  
+The priority here is: **readability → absence of visual strain → luminance control → other parameters.**  
 
 ### Recommended System Settings (Eye Comfort)
 
