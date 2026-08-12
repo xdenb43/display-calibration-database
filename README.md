@@ -5,7 +5,6 @@ Database of display configurations, calibration data and measurements focused on
 
 This repository contains display settings, ICC/ICM color profiles, verification reports, measurements and engineering documentation for monitors, laptops, smartphones, tablets and TVs.
 
-[![Latest Release](https://img.shields.io/github/v/release/xdenb43/display-configuration-database)](https://github.com/xdenb43/display-configuration-database/releases)
 [![License](https://img.shields.io/github/license/xdenb43/display-configuration-database)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/xdenb43/display-configuration-database)](https://github.com/xdenb43/display-configuration-database/commits/main)
   
