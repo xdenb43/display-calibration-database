@@ -108,22 +108,22 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 
 ![Brightness vs. Luminance](brightness_vs_luminance_dhi_lm27_e331.png) 
 
-|  OSD Brightness (%)  | Luminance (cd/m²) |
-| :------------------: | :---------------: |
-|          0           |        28         |
-|          4           |        40         |
-|          10          |        60         |
-|          13          |        70         |
-|        **16**        |      **80**       |
-|          17          |        85         |
-|          19          |        90         |
-|        **22**        |      **100**      |
-|        **27**        |      **120**      |
-|        **33**        |      **140**      |
-|          36          |        150        |
-|          50          |        197        |
-|          75          |        276        |
-|         100          |        351        |
+| OSD Brightness (%) | Luminance (cd/m²) |
+| :----------------: | :---------------: |
+|         0          |        28         |
+|         4          |        40         |
+|         10         |        60         |
+|         13         |        70         |
+|      -> 16 <-      |     -> 80 <-      |
+|         17         |        85         |
+|         19         |        90         |
+|      -> 22 <-      |     -> 100 <-     |
+|      -> 27 <-      |     -> 120 <-     |
+|      -> 33 <-      |     -> 140 <-     |
+|         36         |        150        |
+|         50         |        197        |
+|         75         |        276        |
+|        100         |        351        |
 
 <p align="right">
   <a href="#table-of-contents">Back To Top ⬆️</a>
