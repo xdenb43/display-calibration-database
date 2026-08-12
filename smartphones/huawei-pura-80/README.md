@@ -7,6 +7,13 @@ Calibration/Settings optimized for visual comfort while maintaining natural colo
 
 Official product page:  <https://consumer.huawei.com/ru/phones/pura80/>  
 
+## Table of Contents
+
+- [Specifications](#specifications)
+  - [Color characteristics](#color-characteristics)
+- [Daily Use Configuration](#daily-use-configuration)
+  - [Recommended System Settings (Eye Comfort)](#recommended-system-settings-eye-comfort)
+
 ## Specifications  
 
 | Parameter               | Value                                           |
@@ -32,7 +39,7 @@ Official product page:  <https://consumer.huawei.com/ru/phones/pura80/>
 - Color depth  
     - 1.07 billion colors (manufacturer declared)  
 
-## Calibration  
+## Daily Use Configuration   
 
 The priority here is: **long-term visual comfort → readability → luminance control → natural and stable image reproduction → other parameters.**  
 
@@ -51,3 +58,6 @@ The priority here is: **long-term visual comfort → readability → luminance c
 | **Smart Resolution (Умное разрешение)**          | **OFF (Выкл.)**                                                      | Preserves maximum text and fine-detail clarity at the native 2760 × 1256 resolution. Adaptive resolution reduction provides no clear visual-comfort advantage for this use case.                                                                              |
 | **Refresh Rate (Частота обновления)**            | **High / 120 Hz — Recommended**; **Standard / 60 Hz — Power Saving** | Fixed 120 Hz provides smoother scrolling and interaction and was subjectively more comfortable for you than Dynamic mode. Fixed 60 Hz remains a valid option when battery life is prioritized.                                                                |
 
+<p align="right">
+  <a href="#table-of-contents">Back To Top ⬆️</a>
+</p>

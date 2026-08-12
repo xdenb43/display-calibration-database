@@ -7,6 +7,13 @@ Settings optimized for visual comfort while maintaining natural color reproducti
 
 Official product page:  <https://consumer.huawei.com/qa/phones/p302/>  
 
+## Table of Contents
+
+- [Specifications](#specifications)
+  - [Color characteristics](#color-characteristics)
+- [Daily Use Configuration](#daily-use-configuration)
+  - [Recommended System Settings (Eye Comfort)](#recommended-system-settings-eye-comfort)
+
 ## Specifications  
 
 | Parameter               | Value                                     |
@@ -33,11 +40,11 @@ Official product page:  <https://consumer.huawei.com/qa/phones/p302/>
 - Color depth  
     - 16.7 million colors (manufacturer declared)    
 
-## Calibration  
+## Daily Use Configuration   
 
 The priority here is: **visual comfort → readability → luminance control → natural and stable image reproduction → other parameters.**  
 
-### Recommended System Settings (Daily Use + Eyes Comfort) 
+### Recommended System Settings (Eye Comfort)
 
 | **Parameter**                                    | **Value**                            | **Reason**                                                                                                                                                                                                            |
 | ------------------------------------------------ | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -51,3 +58,6 @@ The priority here is: **visual comfort → readability → luminance control →
 | **Color Temperature (Цветовая температура)**     | **Default (По умолчанию)**           | Maintains the default white-point balance without introducing an unnecessary permanent warm or cool shift. There is insufficient basis to prefer a warmer or cooler setting solely for visual comfort.                |
 | **Screen Resolution (Разрешение экрана)**        | **High (Высокое)**                   | Preserves the native 2340 × 1080 resolution and maximum available text and fine-detail clarity at approximately 422 ppi. Lowering the resolution provides no clear visual-comfort advantage for this use case.        |
 
+<p align="right">
+  <a href="#table-of-contents">Back To Top ⬆️</a>
+</p>

@@ -8,6 +8,15 @@ Settings optimized for daily use and visual comfort while maintaining natural co
 
 Official product page: <https://support.apple.com/en-us/111872>
 
+## Table of Contents
+
+- [Specifications](#specifications)
+  - [Color characteristics](#color-characteristics)
+- [Daily Use Configuration](#daily-use-configuration)
+  - [Recommended System Settings (Eye Comfort)](#recommended-system-settings-eye-comfort)
+  - [Accessibility — Display & Text Size](#accessibility--display--text-size)
+  - [Accessibility — Motion](#accessibility--motion)
+
 ## Specifications  
 
 | Parameter               | Value                                     |
@@ -33,11 +42,11 @@ Official product page: <https://support.apple.com/en-us/111872>
 - Color depth  
     - Not officially specified by Apple    
 
-## Calibration  
+## Daily Use Configuration  
 
 The priority here is: **visual comfort → readability → controlled luminance → stable and natural display behavior → secondary parameters.**  
 
-### Recommended System Settings (Daily Use Eye Comfort)
+### Recommended System Settings (Eye Comfort)
 
 | **Parameter**                 | **Value**                                  | **Reason**                                                                                                                                                                                                                                                  |
 | ----------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -76,3 +85,6 @@ The priority here is: **visual comfort → readability → controlled luminance 
 | **Message Effects (Эффекты сообщений)**                                       | **ON (Вкл.)**         | Allows normal message animations. These effects are brief and user-triggered, so disabling them is not necessary for a general daily-use configuration.                                                                                                                            |
 | **Prefer Non-Blinking Cursor (Предпочтение курсора без мигания)**             | **OFF (Выкл.)**       | The standard blinking cursor provides a visual indication of the current text-entry position. Disabling blinking is mainly useful for users who find cursor animation distracting.                                                                                                 |
 
+<p align="right">
+  <a href="#table-of-contents">Back To Top ⬆️</a>
+</p>
