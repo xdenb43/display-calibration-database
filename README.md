@@ -2,20 +2,20 @@
 
 Database of display calibration settings focused on visual comfort and eye health.
 
-This repository contains ICC/ICM color profiles, display verification reports and engineering documentation for monitors, laptops, smartphones and TVs.
+This repository contains ICC/ICM color profiles, display verification reports and engineering documentation for monitors, laptops, smartphones and TVs.  
 
 [![ReadMe](https://img.shields.io/badge/ReadMe-018EF5?logo=readme&logoColor=fff)](README.md)
-[![Latest Release](https://img.shields.io/github/v/release/xdenb43/display-calibration-database)](https://github.com/xdenb43/display-calibration-database/releases)
-[![License](https://img.shields.io/github/license/xdenb43/display-calibration-database)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/xdenb43/display-calibration-database)](https://github.com/xdenb43/display-calibration-database/commits/main)
+[![Latest Release](https://img.shields.io/github/v/release/xdenb43/display-configuration-database)](https://github.com/xdenb43/display-configuration-database/releases)
+[![License](https://img.shields.io/github/license/xdenb43/display-configuration-database)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/xdenb43/display-configuration-database)](https://github.com/xdenb43/display-configuration-database/commits/main)
 
 ## Table of Contents
 
-- [Repository structure](#repository-structure)
-- [Device categories](#device-categories)
-- [Calibration philosophy](#calibration-philosophy)
-- [Disclaimer](#disclaimer)
-- [License](#license)
+- [Repository structure](#repository-structure)  
+- [Device categories](#device-categories)  
+- [Calibration philosophy](#calibration-philosophy)  
+- [Disclaimer](#disclaimer)  
+- [License](#license)  
 
 ## Repository structure
 
