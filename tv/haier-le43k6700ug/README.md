@@ -11,7 +11,7 @@ Official product page: <https://haieronline.ru/catalog/electronics/tvs/le43k6700
 - [Specifications](#specifications)
   - [Color Characteristics](#color-characteristics)
 - [Calibration](#calibration)
-  - [Environment And Targets](#environment_and_targets)
+  - [Environment And Targets](#environment-and-targets)
   - [OSD Settings](#osd-settings)
 - [Additional Notes](#additional-notes)
 
