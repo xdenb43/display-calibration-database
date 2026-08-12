@@ -6,6 +6,15 @@ Calibration optimized for **movies** using Spyder X and [HCFR 2019](https://sour
 
 Official product page: <https://haieronline.ru/catalog/electronics/tvs/le43k6700ug/>  
 
+## Table of Contents
+
+- [Specifications](#specifications)
+  - [Color characteristics](#color-characteristics)
+- [Calibration](#calibration)
+  - [Calibration environment](#calibration-environment)
+  - [OSD settings](#osd-settings)
+- [Additional notes](#additional-notes)
+
 ## Specifications  
 
 | Parameter          | Value               |
@@ -44,30 +53,46 @@ Calibration objective: **SDR Rec. 709** with _universal_ luminance **140 cd/m²*
 
 ### OSD settings  
 
-- Backlight (Подсветка): 41  
-- Brightness (Яркость): 46  
-- Contrast (Контрастность): 51  
-- Saturation (Насыщенность): 45  
-- Tint (Цветовой тон): 0  
-- Sharpness (Резкость): 8  
-- Gamma (Гамма): Middle (Средняя)  
+**Common settings**
+| Parameter                 |            Value |
+| ------------------------- | ---------------: |
+| Backlight (Подсветка)     |               41 |
+| Brightness (Яркость)      |               46 |
+| Contrast (Контрастность)  |               51 |
+| Saturation (Насыщенность) |               45 |
+| Tint (Цветовой тон)       |                0 |
+| Sharpness (Резкость)      |                8 |
+| Gamma (Гамма)             | Middle (Средняя) |
 
-**Color Temperature (Баланс белого):**  
-- Red: +22  
-- Green: 0  
-- Blue: -48  
+ 
 
-**Picture Processing:**  
-- Noise Reduction (Динамическое шумоподавление): Off  
-- MPEG Noise Reduction (MPEG шумоподавление): Off  
-- Luma: Off  
-- DI Film Mode: Auto  
-- Blue Stretch (Синий стрейч): Off  
-- Game Mode: Off  
-- PC Mode: Off  
+**Color Temperature (Баланс белого)**  
+| Parameter | Value |
+| --------- | ----: |
+| Red       |   +22 |
+| Green     |     0 |
+| Blue      |   -48 |
+
+
+**Picture Processing**  
+| Parameter                                     | Value |
+| --------------------------------------------- | ----- |
+| Noise Reduction (Динамическое шумоподавление) | Off   |
+| MPEG Noise Reduction (MPEG шумоподавление)    | Off   |
+| Luma                                          | Off   |
+| DI Film Mode                                  | Auto  |
+| Blue Stretch (Синий стрейч)                   | Off   |
+| Game Mode                                     | Off   |
+| PC Mode                                       | Off   |
+
+
 
 ## Additional notes
 
 - An alternative launcher improves UI responsiveness  
 - Factory white point: ~9700 K  
 - Online 4K playback may be sluggish  
+
+<p align="right">
+  <a href="#table-of-contents">Back To Top ⬆️</a>
+</p>
