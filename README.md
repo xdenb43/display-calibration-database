@@ -42,13 +42,13 @@ Each device directory is self-contained and may include:
 
 ## Device categories
 
-| Category           | Description                              |
-| ------------------ | ---------------------------------------- |
-| 🖥️ **Monitors**   | External LCD, Mini LED and OLED displays |
-| 💻 **Laptops**     | Built-in notebook displays               |
-| 📱 **Smartphones** | Mobile device displays                   |
-| 📱 **Tablets**     | Tablet displays                          |
-| 📺 **TVs**         | Television displays                      |
+| Category       | Description                              |
+| -------------- | ---------------------------------------- |
+| 🖥️ Monitors    | External LCD, Mini LED and OLED displays |
+| 💻 Laptops     | Built-in notebook displays               |
+| 📱 Smartphones | Mobile device displays                   |
+| 📱 Tablets     | Tablet displays                          |
+| 📺 TVs         | Television displays                      |
 
 
 ## Configuration and calibration philosophy
