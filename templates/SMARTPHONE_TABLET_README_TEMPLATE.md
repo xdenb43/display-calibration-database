@@ -4,7 +4,7 @@
 
 Official product page: [URL]
 
-[![Status](https://img.shields.io/badge/Status-Draft-orange)](#)
+[![page status](https://img.shields.io/badge/Page%20Status-draft-orange)](#)
 
 ## Table Of Contents
 
