@@ -7,7 +7,12 @@ This repository contains display settings, ICC/ICM color profiles, verification 
 [![Latest Release](https://img.shields.io/github/v/release/xdenb43/display-configuration-database)](https://github.com/xdenb43/display-configuration-database/releases)
 [![License](https://img.shields.io/github/license/xdenb43/display-configuration-database)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/xdenb43/display-configuration-database)](https://github.com/xdenb43/display-configuration-database/commits/main)
-[![GitHub Repo File or Directory Count](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database)](https://github.com/xdenb43/display-configuration-database)
+  
+[![Monitors](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/monitors?type=dir&label=Monitors)](https://github.com/xdenb43/display-configuration-database/tree/main/monitors)
+[![Laptops](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/laptops?type=dir&label=Laptops)](https://github.com/xdenb43/display-configuration-database/tree/main/laptops)
+[![Smartphones](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/smartphones?type=dir&label=Smartphones)](https://github.com/xdenb43/display-configuration-database/tree/main/smartphones)
+[![Tablets](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/tablets?type=dir&label=Tablets)](https://github.com/xdenb43/display-configuration-database/tree/main/tablets)
+[![TVs](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/tv?type=dir&label=TVs)](https://github.com/xdenb43/display-configuration-database/tree/main/tv)
 
 ## Table of Contents
 
