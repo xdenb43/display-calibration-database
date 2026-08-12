@@ -6,14 +6,14 @@ Calibration optimized for **movies** using Spyder X and [HCFR 2019](https://sour
 
 Official product page: <https://haieronline.ru/catalog/electronics/tvs/le43k6700ug/>  
 
-## Table of Contents
+## Table Of Contents
 
 - [Specifications](#specifications)
-  - [Color characteristics](#color-characteristics)
+  - [Color Characteristics](#color-characteristics)
 - [Calibration](#calibration)
-  - [Calibration environment](#calibration-environment)
-  - [OSD settings](#osd-settings)
-- [Additional notes](#additional-notes)
+  - [Environment And Targets](#environment_and_targets)
+  - [OSD Settings](#osd-settings)
+- [Additional Notes](#additional-notes)
 
 ## Specifications  
 
@@ -31,7 +31,7 @@ Official product page: <https://haieronline.ru/catalog/electronics/tvs/le43k6700
 | Response time      | 8 ms (GtG, approx.) |
 
 
-### Color characteristics
+### Color Characteristics
 
 Not specified
 
@@ -39,39 +39,43 @@ Not specified
 
 Calibration objective: **SDR Rec. 709** with _universal_ luminance **140 cd/m²**  
 
-### Calibration environment  
+### Environment And Targets
 
+**Calibration environment**
 | Parameter          | Value        |
 | ------------------ | ------------ |
 | Calibration date   | 2026-06-04   |
 | Instrument         | Spyder X     |
 | Software           | HCFR 2019    |
-|                    |              |
+
+
+**Calibration target**
+| Parameter          | Value        |
+| ------------------ | ------------ |
 | Target white point | D65 (6500 K) |
 | Target gamma       | 2.2          |
 | Target luminance   | 140 cd/m²    |
 
-### OSD settings  
+### OSD Settings  
 
 **Common settings**
-| Parameter                 |            Value |
-| ------------------------- | ---------------: |
-| Backlight (Подсветка)     |               41 |
-| Brightness (Яркость)      |               46 |
-| Contrast (Контрастность)  |               51 |
-| Saturation (Насыщенность) |               45 |
-| Tint (Цветовой тон)       |                0 |
-| Sharpness (Резкость)      |                8 |
+| Parameter                 | Value            |
+| ------------------------- | ---------------- |
+| Backlight (Подсветка)     | 41               |
+| Brightness (Яркость)      | 46               |
+| Contrast (Контрастность)  | 51               |
+| Saturation (Насыщенность) | 45               |
+| Tint (Цветовой тон)       | 0                |
+| Sharpness (Резкость)      | 8                |
 | Gamma (Гамма)             | Middle (Средняя) |
 
- 
 
 **Color Temperature (Баланс белого)**  
 | Parameter | Value |
-| --------- | ----: |
-| Red       |   +22 |
-| Green     |     0 |
-| Blue      |   -48 |
+| --------- | ----- |
+| Red       | +22   |
+| Green     | 0     |
+| Blue      | -48   |
 
 
 **Picture Processing**  
@@ -87,7 +91,7 @@ Calibration objective: **SDR Rec. 709** with _universal_ luminance **140 cd/m²*
 
 
 
-## Additional notes
+## Additional Notes
 
 - An alternative launcher improves UI responsiveness  
 - Factory white point: ~9700 K  

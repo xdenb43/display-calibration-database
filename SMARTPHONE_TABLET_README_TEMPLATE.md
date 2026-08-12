@@ -6,7 +6,7 @@ Official product page: [URL]
 
 ---
 
-## Table of Contents
+## Table Of Contents
 
 - [Specifications](#specifications)
   - [Color characteristics](#color-characteristics)
@@ -22,22 +22,22 @@ Official product page: [URL]
 
 ## Specifications
 
-| **Parameter** | **Value** |
-|---|---|
-| **Screen size** | |
-| **Panel type** | |
-| **Aspect Ratio** | |
-| **Resolution** | |
-| **Pixel Density** | |
-| **Backlight** | |
-| **Refresh rate** | |
-| **PWM Dimming** | |
-| **Touch Sampling Rate** | |
-| **Color Depth** | |
-| **Color Gamut** | |
-| **Contrast Ratio** | |
+| Parameter           | Value |
+| ------------------- | ----- |
+| Screen size         |       |
+| Panel type          |       |
+| Aspect Ratio        |       |
+| Resolution          |       |
+| Pixel Density       |       |
+| Backlight           |       |
+| Refresh rate        |       |
+| PWM Dimming         |       |
+| Touch Sampling Rate |       |
+| Color Depth         |       |
+| Color Gamut         |       |
+| Contrast Ratio      |       |
 
-### Color characteristics
+### Color Characteristics
 
 - Wide Color Gamut (WCG)
   - [Description]
@@ -48,52 +48,55 @@ Official product page: [URL]
 
 ## Daily Use Configuration
 
-**Objective:** Long-term daily use with maximum visual comfort while maintaining readability and natural display reproduction.
+Objective: Long-term daily use with maximum visual comfort while maintaining readability and natural display reproduction.
 
-**Priority:** **long-term visual comfort → readability → luminance control → natural and stable image reproduction → other parameters.**
+Priority: **long-term visual comfort → readability → luminance control → natural and stable image reproduction → other parameters.**
 
 ### Display Settings
 
-| **Parameter** | **Value** | **Reason** |
-|---|---|---|
-| **Brightness** | | |
-| **Display Appearance / Dark Mode** | | |
-| **Eye Comfort / Eye Protection** | | |
-| **Flicker Reduction** | | |
-| **Font Size** | | |
-| **Font Weight** | | |
-| **Color Mode** | | |
-| **Color Temperature** | | |
-| **Screen Resolution** | | |
-| **Refresh Rate** | | |
+| Parameter                      | Value | Reason |
+| ------------------------------ | ----- | ------ |
+| Brightness                     |       |        |
+| Display Appearance / Dark Mode |       |        |
+| Eye Comfort / Eye Protection   |       |        |
+| Flicker Reduction              |       |        |
+| Font Size                      |       |        |
+| Font Weight                    |       |        |
+| Color Mode                     |       |        |
+| Color Temperature              |       |        |
+| Screen Resolution              |       |        |
+| Refresh Rate                   |       |        |
+
 
 ### Accessibility — Display & Text Size
 
-| **Parameter** | **Value** | **Reason** |
-|---|---|---|
-| **Bold Text** | | |
-| **Larger Text** | | |
-| **Button Shapes** | | |
-| **On/Off Labels** | | |
-| **Reduce Transparency** | | |
-| **Increase Contrast** | | |
-| **Differentiate Without Color** | | |
-| **Prefer Horizontal Text** | | |
-| **Smart Invert** | | |
-| **Classic Invert** | | |
-| **Color Filters** | | |
-| **Reduce White Point** | | |
+| Parameter                   | Value | Reason |
+| --------------------------- | ----- | ------ |
+| Bold Text                   |       |        |
+| Larger Text                 |       |        |
+| Button Shapes               |       |        |
+| On/Off Labels               |       |        |
+| Reduce Transparency         |       |        |
+| Increase Contrast           |       |        |
+| Differentiate Without Color |       |        |
+| Prefer Horizontal Text      |       |        |
+| Smart Invert                |       |        |
+| Classic Invert              |       |        |
+| Color Filters               |       |        |
+| Reduce White Point          |       |        |
+
 
 ### Accessibility — Motion
 
-| **Parameter** | **Value** | **Reason** |
-|---|---|---|
-| **Reduce Motion** | | |
-| **Dim Flashing Lights** | | |
-| **Auto-Play Animated Images** | | |
-| **Auto-Play Video Previews** | | |
-| **Message Effects** | | |
-| **Prefer Non-Blinking Cursor** | | |
+| Parameter                  | Value | Reason |
+| -------------------------- | ----- | ------ |
+| Reduce Motion              |       |        |
+| Dim Flashing Lights        |       |        |
+| Auto-Play Animated Images  |       |        |
+| Auto-Play Video Previews   |       |        |
+| Message Effects            |       |        |
+| Prefer Non-Blinking Cursor |       |        |
+
 
 ---
 
