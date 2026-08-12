@@ -76,5 +76,5 @@ Unless otherwise stated, all documentation is released under the MIT License.
 Calibration profiles, verification reports, measurements and configuration recommendations are provided for educational and research purposes.  
 
 <p align="right">
-  <a href="#table-of-contents">⬆️ Back to TOC</a>
+  <a href="#table-of-contents">Back to TOC ⬆️</a>
 </p>
