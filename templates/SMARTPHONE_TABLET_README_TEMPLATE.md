@@ -4,7 +4,7 @@
 
 Official product page: [URL]
 
----
+[![Status](https://img.shields.io/badge/Status-Draft-orange)](#)
 
 ## Table Of Contents
 
@@ -17,8 +17,6 @@ Official product page: [URL]
 - [Notes](#notes)
 - [Disclaimer](#disclaimer)
 - [License](#license)
-
----
 
 ## Specifications
 
@@ -44,8 +42,6 @@ Official product page: [URL]
 - Color depth
   - [Description]
 
----
-
 ## Daily Use Configuration
 
 Objective: Long-term daily use with maximum visual comfort while maintaining readability and natural display reproduction.
@@ -67,7 +63,6 @@ Priority: **long-term visual comfort → readability → luminance control → n
 | Screen Resolution              |       |        |
 | Refresh Rate                   |       |        |
 
-
 ### Accessibility — Display & Text Size
 
 | Parameter                   | Value | Reason |
@@ -85,7 +80,6 @@ Priority: **long-term visual comfort → readability → luminance control → n
 | Color Filters               |       |        |
 | Reduce White Point          |       |        |
 
-
 ### Accessibility — Motion
 
 | Parameter                  | Value | Reason |
@@ -97,14 +91,9 @@ Priority: **long-term visual comfort → readability → luminance control → n
 | Message Effects            |       |        |
 | Prefer Non-Blinking Cursor |       |        |
 
-
----
-
 ## Notes
 
 [Device-specific observations, measurements, limitations, firmware behavior, etc.]
-
----
 
 ## Disclaimer
 
@@ -112,16 +101,12 @@ Display configuration recommendations are device-specific.
 
 Even identical device models may differ due to display characteristics, panel variation, firmware, software versions, aging and user settings. These settings should therefore be considered reference configurations rather than universally optimal values.
 
----
-
 ## License
 
 Unless otherwise stated, all documentation is released under the MIT License.
 
 Display measurements and configuration recommendations are provided for educational and research purposes.
 
----
-
 <p align="right">
-  <a href="#table-of-contents">⬆️ Back To ToP</a>
+  <a href="#table-of-contents">Back To Top ⬆️</a>
 </p>

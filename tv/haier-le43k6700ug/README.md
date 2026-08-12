@@ -6,7 +6,7 @@ Calibration optimized for **movies** using Spyder X and [HCFR 2019](https://sour
 
 Official product page: <https://haieronline.ru/catalog/electronics/tvs/le43k6700ug/>  
 
-[![Verified Information](https://img.shields.io/badge/Verified%20Information-Yes-success)](#)
+[![Status](https://img.shields.io/badge/Status-Verified-success)](#)
 
 ## Table Of Contents
 
