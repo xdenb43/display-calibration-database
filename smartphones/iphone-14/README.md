@@ -57,7 +57,7 @@ The priority here is: **visual comfort → readability → controlled luminance 
 | **True Tone**                 | **ON (Вкл.)**                              | Automatically adapts the display's color balance to ambient lighting, helping the screen appear more natural under different lighting conditions. This is appropriate for daily use where surrounding light changes throughout the day.                     |
 | **Night Shift**               | **ON — 22:00–07:00**                       | Applies a warmer color shift during the evening and night. Limiting the adjustment to the period of lower ambient lighting provides an adaptive evening display mode while preserving a more neutral appearance during daytime use.                         |
 
-#### Accessibility — Display & Text Size   
+### Accessibility — Display & Text Size   
 
 | **Parameter**                                                    | **Recommended value** | **Reason**                                                                                                                                                                                           |
 | ---------------------------------------------------------------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -74,7 +74,7 @@ The priority here is: **visual comfort → readability → controlled luminance 
 | **Color Filters (Светофильтры)**                                 | **OFF (Выкл.)**       | Alters the display's color response. Without a specific visual requirement, leaving the native color reproduction unchanged is preferable.                                                           |
 | **Reduce White Point (Понижение точки белого)**                  | **OFF (Выкл.)**       | Reduces the intensity of bright colors. It can be useful for individual sensitivity to screen brightness, but with Auto Brightness enabled it is not necessary as a general setting.                 |
 
-#### Accessibility — Motion  
+### Accessibility — Motion  
 
 | **Parameter**                                                                 | **Recommended value** | **Reason**                                                                                                                                                                                                                                                                         |
 | ----------------------------------------------------------------------------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
