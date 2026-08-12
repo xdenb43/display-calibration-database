@@ -7,7 +7,7 @@ Calibration/Settings optimized for visual comfort while maintaining natural colo
 
 Official product page:  <https://consumer.huawei.com/ru/phones/pura80/>  
 
-[![page status](https://img.shields.io/badge/page%20status-validated-success)](#)
+[![Page Status](https://img.shields.io/badge/Page%20Status-Validated-success)](#)
 
 ## Table Of Contents
 

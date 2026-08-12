@@ -7,7 +7,7 @@ Settings optimized for **long-term visual comfort, readability and stable image 
 
 Official product page: <https://consumer.huawei.com/ru/tablets/matepad-11-5-s/specs/>
 
-[![page status](https://img.shields.io/badge/page%20status-validated-success)](#)
+[![Page Status](https://img.shields.io/badge/Page%20Status-Validated-success)](#)
 
 ## Table Of Contents
 

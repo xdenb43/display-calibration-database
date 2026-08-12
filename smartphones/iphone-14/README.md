@@ -8,7 +8,7 @@ Settings optimized for daily use and visual comfort while maintaining natural co
 
 Official product page: <https://support.apple.com/en-us/111872>
 
-[![page status](https://img.shields.io/badge/page%20status-validated-success)](#)
+[![Page Status](https://img.shields.io/badge/Page%20Status-Validated-success)](#)
 
 ## Table Of Contents
 
