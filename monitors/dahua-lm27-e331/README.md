@@ -98,8 +98,6 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 
 ## Brightness Response Curve  
 
-![Brightness vs. Luminance](brightness_vs_luminance_dhi_lm27_e331.png) 
-
 > [!NOTE]
 > Recommended luminance levels:
 >
@@ -107,6 +105,8 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 > - Evening: 100–120 cd/m²
 > - Daylight: 120–140 cd/m²
 > - Bright daylight: 140–160 cd/m²
+
+![Brightness vs. Luminance](brightness_vs_luminance_dhi_lm27_e331.png) 
 
 |  OSD Brightness (%)  | Luminance (cd/m²) |
 | :------------------: | :---------------: |
