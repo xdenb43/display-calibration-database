@@ -9,7 +9,7 @@ Official product page: [URL]
 ## Table Of Contents
 
 - [Specifications](#specifications)
-  - [Color characteristics](#color-characteristics)
+  - [Color Characteristics](#color-characteristics)
 - [Daily Use Configuration](#daily-use-configuration)
   - [Display Settings](#display-settings)
   - [Accessibility — Display & Text Size](#accessibility--display--text-size)
