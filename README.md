@@ -6,6 +6,15 @@ This repository contains ICC/ICM color profiles, display verification reports an
 
 [![License](https://img.shields.io/github/license/xdenb43/display-calibration-database)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/xdenb43/display-calibration-database)](https://github.com/xdenb43/display-calibration-database/commits/main)
+[![ReadMe](https://img.shields.io/badge/ReadMe-018EF5?logo=readme&logoColor=fff)](README.md)
+
+## Table of Contents
+
+- [Repository structure](#repository-structure)
+- [Device categories](#device-categories)
+- [Calibration philosophy](#calibration-philosophy)
+- [Disclaimer](#disclaimer)
+- [License](#license)
 
 ## Repository structure
 
