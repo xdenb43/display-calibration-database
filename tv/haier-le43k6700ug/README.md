@@ -58,38 +58,26 @@ Calibration objective: **SDR Rec. 709** with _universal_ luminance **140 cd/m²*
 
 ### OSD Settings  
 
-**Common settings**
-| Parameter                 | Value            |
-| ------------------------- | ---------------- |
-| Backlight (Подсветка)     | 41               |
-| Brightness (Яркость)      | 46               |
-| Contrast (Контрастность)  | 51               |
-| Saturation (Насыщенность) | 45               |
-| Tint (Цветовой тон)       | 0                |
-| Sharpness (Резкость)      | 8                |
-| Gamma (Гамма)             | Middle (Средняя) |
-
-
-**Color Temperature (Баланс белого)**  
-| Parameter | Value |
-| --------- | ----- |
-| Red       | +22   |
-| Green     | 0     |
-| Blue      | -48   |
-
-
-**Picture Processing**  
-| Parameter                                     | Value |
-| --------------------------------------------- | ----- |
-| Noise Reduction (Динамическое шумоподавление) | Off   |
-| MPEG Noise Reduction (MPEG шумоподавление)    | Off   |
-| Luma                                          | Off   |
-| DI Film Mode                                  | Auto  |
-| Blue Stretch (Синий стрейч)                   | Off   |
-| Game Mode                                     | Off   |
-| PC Mode                                       | Off   |
-
-
+- Common settings:  
+    - Backlight: 41
+    - Brightness: 46
+    - Contrast: 51
+    - Saturation: 45
+    - Tint: 0
+    - Sharpness: 8
+    - Gamma: Middle 
+- Color Temperature:
+    - Red: +22
+    - Green: 0
+    - Blue: -48
+- Picture Processing:
+    - Noise Reduction: Off
+    - MPEG Noise Reduction: Off
+    - Luma: Off
+    - DI Film Mode: Auto
+    - Blue Stretch: Off
+    - Game Mode: Off
+    - PC Mode: Off
 
 ## Additional Notes
 

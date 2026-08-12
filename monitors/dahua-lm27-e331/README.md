@@ -6,6 +6,18 @@ Calibration optimized for visual comfort using Spyder X and DisplayCAL.
 
 Official product page:  <https://www.dahuasecurity.com/mena/products/All-Products/Display--Control/Monitors/Gaming-Series/LM27-E331A>  
 
+## Table of Contents
+
+- [Specifications](#specifications)
+  - [Color Characteristics](#color-characteristics)
+- [Calibration](#calibration)
+  - [Environment And Targets](#environment-and-targets)
+  - [OSD settings](#osd-settings)
+- [Downloads](#downloads)
+  - [ICC/ICM Profile](#iccicm-profile)
+  - [Reports](#reports)
+- [Brightness Response Curve](#brightness-response-curve)
+
 ## Specifications  
 
 | Parameter          | Value           |
@@ -22,7 +34,7 @@ Official product page:  <https://www.dahuasecurity.com/mena/products/All-Product
 | Response time      | 1 ms            |
 
 
-### Color characteristics
+### Color Characteristics
 - Wide Color Gamut (WCG) declared by manufacturer
 - Known color gamut:  
     - sRGB: ~ 99%  
@@ -34,14 +46,19 @@ Official product page:  <https://www.dahuasecurity.com/mena/products/All-Product
 
 Calibration objective: **Visual comfort with reduced eye strain during prolonged use.**  
 
-### Calibration environment  
+### Environment And Targets
 
+**Calibration environment**
 | Parameter          | Value        |
 | ------------------ | ------------ |
-| Calibration date   | 2026-06-30   |
+| Calibration date   | 2026-06-04   |
 | Instrument         | Spyder X     |
-| Software           | DisplayCAL   |
-|                    |              |  
+| Software           | HCFR 2019    |
+
+
+**Calibration target**
+| Parameter          | Value        |
+| ------------------ | ------------ |
 | Target white point | D65 (6500 K) |
 | Target gamma       | 2.2          |
 | Target luminance   | 120 cd/m²    |
@@ -54,16 +71,16 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
     - Black level: 50  
     - Sharpness: 50  
 - Colors menu:  
-    - Red 50  
-    - Green 49  
-    - Blue 43  
+    - Red: 50  
+    - Green: 49  
+    - Blue: 43  
 - Gaming menu:  
-    - FreeSync OFF  
-    - Overdrive OFF  
-    - DCR OFF  
-    - MPRT OFF  
+    - FreeSync: OFF  
+    - Overdrive: OFF  
+    - DCR: OFF  
+    - MPRT: OFF  
 - Advanced menu:  
-    - HDR OFF  
+    - HDR: OFF  
 - Refresh Rate: 120 Hz fixed
 
 ## Downloads
@@ -72,7 +89,7 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 > The ICC profile was created using the OSD settings listed above.
 > Different monitor settings (brightness, RGB gain, contrast, etc.) may reduce color accuracy.
 
-### Calibration
+### ICC/ICM Profile
 - [ICC profile](https://xdenb43.github.io/display-configuration-database/monitors/dahua-lm27-e331/DHI-LM27-E331_120cdm2_D6500_2.2_M-S_XYZLUT_MTX.icm)
 
 ### Reports  
@@ -107,3 +124,7 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 |          50          |        197        |
 |          75          |        276        |
 |         100          |        351        |
+
+<p align="right">
+  <a href="#table-of-contents">Back To Top ⬆️</a>
+</p>
