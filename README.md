@@ -15,7 +15,7 @@ This repository contains display settings, ICC/ICM color profiles, verification 
 [![Tablets](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/tablets?type=dir&label=Tablets)](https://github.com/xdenb43/display-configuration-database/tree/main/tablets)
 [![TVs](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/tv?type=dir&label=TVs)](https://github.com/xdenb43/display-configuration-database/tree/main/tv)
 
-## Table of Contents
+## Table Of Contents
 
 - [Repository structure](#repository-structure)
 - [Device categories](#device-categories)
@@ -23,7 +23,7 @@ This repository contains display settings, ICC/ICM color profiles, verification 
 - [Disclaimer](#disclaimer)
 - [License](#license)
 
-## Repository structure
+## Repository Structure
 
 ```text
 project/
@@ -46,7 +46,7 @@ Each device directory is self-contained and may include:
 - Display verification report (if applicable)
 - Additional measurements, notes or images (optional)
 
-## Device categories
+## Device Categories
 
 | Category       | Description                              |
 | -------------- | ---------------------------------------- |
@@ -57,7 +57,7 @@ Each device directory is self-contained and may include:
 | 📺 TVs         | Television displays                      |
 
 
-## Configuration and calibration philosophy
+## Configuration And Calibration Philosophy
 
 The repository follows a physics-first and verification-first approach.  
 
