@@ -6,21 +6,21 @@ Calibration optimized for visual comfort using Spyder X and DisplayCAL.
 
 Official product page:  <https://www.dahuasecurity.com/mena/products/All-Products/Display--Control/Monitors/Gaming-Series/LM27-E331A>  
 
-[![Page Status](https://img.shields.io/badge/Page%20Status-Validated-success)](#)
-[![ICC Profile](https://img.shields.io/badge/ICC%20Profile-Available-success)](./DHI-LM27-E331_120cdm2_D6500_2.2_M-S_XYZLUT_MTX.icm)
-[![Verification Report](https://img.shields.io/badge/Verification%20Report-Available-success)](./Measurement_Report_DHI-LM27-E331.html)
+[![Page status](https://img.shields.io/badge/Page%20status-validated-success)](#)
+[![ICC profile](https://img.shields.io/badge/ICC%20rrofile-available-success)](./DHI-LM27-E331_120cdm2_D6500_2.2_M-S_XYZLUT_MTX.icm)
+[![Verification report](https://img.shields.io/badge/Verification%20report-available-success)](./Measurement_Report_DHI-LM27-E331.html)
 
-## Table of Contents
+## Table of contents
 
 - [Specifications](#specifications)
-  - [Color Characteristics](#color-characteristics)
+  - [Color characteristics](#color-characteristics)
 - [Calibration](#calibration)
-  - [Environment And Targets](#environment-and-targets)
+  - [Environment and targets](#environment-and-targets)
   - [OSD settings](#osd-settings)
 - [Downloads](#downloads)
-  - [ICC/ICM Profile](#iccicm-profile)
+  - [ICC/ICM profile](#iccicm-profile)
   - [Reports](#reports)
-- [Brightness Response Curve](#brightness-response-curve)
+- [Brightness response curve](#brightness-response-curve)
 
 ## Specifications  
 
@@ -38,7 +38,7 @@ Official product page:  <https://www.dahuasecurity.com/mena/products/All-Product
 | Response time      | 1 ms            |
 
 
-### Color Characteristics
+### Color characteristics
 - Wide Color Gamut (WCG) declared by manufacturer
 - Known color gamut:  
     - sRGB: ~ 99%  
@@ -50,14 +50,14 @@ Official product page:  <https://www.dahuasecurity.com/mena/products/All-Product
 
 Calibration objective: **Visual comfort with reduced eye strain during prolonged use.**  
 
-### Environment And Targets
+### Environment and targets
 
 **Calibration environment**
 | Parameter          | Value        |
 | ------------------ | ------------ |
-| Calibration date   | 2026-06-04   |
+| Calibration date   | 2026-06-30   |
 | Instrument         | Spyder X     |
-| Software           | HCFR 2019    |
+| Software           | DisplayCal   |
 
 
 **Calibration target**
@@ -93,14 +93,14 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 > The ICC profile was created using the OSD settings listed above.
 > Different monitor settings (brightness, RGB gain, contrast, etc.) may reduce color accuracy.
 
-### ICC/ICM Profile
+### ICC/ICM profile
 - [ICC profile](https://xdenb43.github.io/display-configuration-database/monitors/dahua-lm27-e331/DHI-LM27-E331_120cdm2_D6500_2.2_M-S_XYZLUT_MTX.icm)
 
 ### Reports  
 - [Verification report (HTML)](https://xdenb43.github.io/display-configuration-database/monitors/dahua-lm27-e331/Measurement_Report_DHI-LM27-E331.html)
 - [Verification report (PDF)](Measurement_Report_DHI-LM27-E331.pdf)
 
-## Brightness Response Curve  
+## Brightness response curve  
 
 > [!NOTE]
 > Recommended luminance levels:
@@ -130,5 +130,5 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 |        100         |        351        |
 
 <p align="right">
-  <a href="#table-of-contents">Back To Top ⬆️</a>
+  <a href="#table-of-contents">Back to Top ⬆️</a>
 </p>
