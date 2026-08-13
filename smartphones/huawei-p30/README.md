@@ -7,14 +7,14 @@ Settings optimized for visual comfort while maintaining natural color reproducti
 
 Official product page:  <https://consumer.huawei.com/qa/phones/p302/>  
 
-[![Page Status](https://img.shields.io/badge/Page%20Status-Validated-success)](#)
+[![Page status](https://img.shields.io/badge/Page%20status-validated-success)](#)
 
-## Table Of Contents
+## Table of contents
 
 - [Specifications](#specifications)
-  - [Color Characteristics](#color-characteristics)
-- [Daily Use Configuration](#daily-use-configuration)
-  - [Recommended System Settings (Eye Comfort)](#recommended-system-settings-eye-comfort)
+  - [Color characteristics](#color-characteristics)
+- [Daily use configuration](#daily-use-configuration)
+  - [Recommended display settings (eye comfort)](#recommended-display-settings-eye-comfort)
 
 ## Specifications  
 
@@ -35,18 +35,18 @@ Official product page:  <https://consumer.huawei.com/qa/phones/p302/>
 
 
 
-### Color Characteristics  
+### Color characteristics  
 
 - Wide Color Gamut (WCG)  
     - DCI-P3 wide color gamut (manufacturer declared)    
 - Color depth  
     - 16.7 million colors (manufacturer declared)    
 
-## Daily Use Configuration   
+## Daily use configuration   
 
 The priority here is: **visual comfort → readability → luminance control → natural and stable image reproduction → other parameters.**  
 
-### Recommended System Settings (Eye Comfort)
+### Recommended display settings (eye comfort)
 
 | Parameter                                    | Value                            | Reason                                                                                                                                                                                                                |
 | -------------------------------------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -61,5 +61,5 @@ The priority here is: **visual comfort → readability → luminance control →
 | Screen Resolution (Разрешение экрана)        | High (Высокое)                   | Preserves the native 2340 × 1080 resolution and maximum available text and fine-detail clarity at approximately 422 ppi. Lowering the resolution provides no clear visual-comfort advantage for this use case.        |
 
 <p align="right">
-  <a href="#table-of-contents">Back To Top ⬆️</a>
+  <a href="#table-of-contents">Back to Top ⬆️</a>
 </p>

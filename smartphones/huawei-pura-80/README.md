@@ -7,14 +7,14 @@ Calibration/Settings optimized for visual comfort while maintaining natural colo
 
 Official product page:  <https://consumer.huawei.com/ru/phones/pura80/>  
 
-[![Page Status](https://img.shields.io/badge/Page%20Status-Validated-success)](#)
+[![Page status](https://img.shields.io/badge/Page%20status-validated-success)](#)
 
-## Table Of Contents
+## Table of contents
 
 - [Specifications](#specifications)
-  - [Color Characteristics](#color-characteristics)
-- [Daily Use Configuration](#daily-use-configuration)
-  - [Recommended System Settings (Eye Comfort)](#recommended-system-settings-eye-comfort)
+  - [Color characteristics](#color-characteristics)
+- [Daily use configuration](#daily-use-configuration)
+  - [Recommended display settings (eye comfort)](#recommended-display-settings-eye-comfort)
 
 ## Specifications  
 
@@ -34,18 +34,18 @@ Official product page:  <https://consumer.huawei.com/ru/phones/pura80/>
 | Contrast Ratio      | Effectively infinite (OLED)                 |
 
 
-### Color Characteristics  
+### Color characteristics  
 
 - Wide Color Gamut (WCG)  
     - P3 wide color gamut (manufacturer declared)  
 - Color depth  
     - 1.07 billion colors (manufacturer declared)  
 
-## Daily Use Configuration   
+## Daily use configuration   
 
 The priority here is: **long-term visual comfort → readability → luminance control → natural and stable image reproduction → other parameters.**  
 
-### Recommended System Settings (Eye Comfort)
+### Recommended display settings (eye comfort)
 
 | Parameter                                    | Value                                                        | Reason                                                                                                                                                                                                                                                        |
 | -------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -61,5 +61,5 @@ The priority here is: **long-term visual comfort → readability → luminance c
 | Refresh Rate (Частота обновления)            | High / 120 Hz — Recommended; Standard / 60 Hz — Power Saving | Fixed 120 Hz provides smoother scrolling and interaction and was subjectively more comfortable for you than Dynamic mode. Fixed 60 Hz remains a valid option when battery life is prioritized.                                                                |
 
 <p align="right">
-  <a href="#table-of-contents">Back To Top ⬆️</a>
+  <a href="#table-of-contents">Back to Top ⬆️</a>
 </p>

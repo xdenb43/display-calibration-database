@@ -8,14 +8,14 @@ Settings optimized for daily use and visual comfort while maintaining natural co
 
 Official product page: <https://support.apple.com/en-us/111872>
 
-[![Page Status](https://img.shields.io/badge/Page%20Status-Validated-success)](#)
+[![Page status](https://img.shields.io/badge/Page%20status-validated-success)](#)
 
-## Table Of Contents
+## Table of contents
 
 - [Specifications](#specifications)
-  - [Color Characteristics](#color-characteristics)
-- [Daily Use Configuration](#daily-use-configuration)
-  - [Recommended System Settings (Eye Comfort)](#recommended-system-settings-eye-comfort)
+  - [Color characteristics](#color-characteristics)
+- [Daily use configuration](#daily-use-configuration)
+  - [Recommended display settings (eye comfort)](#recommended-display-settings-eye-comfort)
   - [Accessibility — Display & Text Size](#accessibility--display--text-size)
   - [Accessibility — Motion](#accessibility--motion)
 
@@ -37,18 +37,18 @@ Official product page: <https://support.apple.com/en-us/111872>
 | Contrast Ratio      | Effectively infinite (OLED)           |
 
 
-### Color Characteristics  
+### Color characteristics  
 
 - Wide Color Gamut (WCG)  
     - Wide Color Gamut (P3) (manufacturer declared)    
 - Color depth  
     - Not officially specified by Apple    
 
-## Daily Use Configuration  
+## Daily use configuration  
 
 The priority here is: **visual comfort → readability → controlled luminance → stable and natural display behavior → secondary parameters.**  
 
-### Recommended System Settings (Eye Comfort)
+### Recommended display settings (eye comfort)
 
 | Parameter                 | Value                                  | Reason                                                                                                                                                                                                                                                      |
 | ------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -88,5 +88,5 @@ The priority here is: **visual comfort → readability → controlled luminance 
 | Prefer Non-Blinking Cursor (Предпочтение курсора без мигания)             | OFF (Выкл.)       | The standard blinking cursor provides a visual indication of the current text-entry position. Disabling blinking is mainly useful for users who find cursor animation distracting.                                                                                                 |
 
 <p align="right">
-  <a href="#table-of-contents">Back To Top ⬆️</a>
+  <a href="#table-of-contents">Back to Top ⬆️</a>
 </p>
