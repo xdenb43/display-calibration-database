@@ -6,16 +6,16 @@ Calibration optimized for **movies** using Spyder X and [HCFR 2019](https://sour
 
 Official product page: <https://haieronline.ru/catalog/electronics/tvs/le43k6700ug/>  
 
-[![Page Status](https://img.shields.io/badge/Page%20Status-Validated-success)](#)
+[![Page status](https://img.shields.io/badge/Page%20status-validated-success)](#)
 
-## Table Of Contents
+## Table of contents
 
 - [Specifications](#specifications)
-  - [Color Characteristics](#color-characteristics)
+  - [Color characteristics](#color-characteristics)
 - [Calibration](#calibration)
-  - [Environment And Targets](#environment-and-targets)
-  - [OSD Settings](#osd-settings)
-- [Additional Notes](#additional-notes)
+  - [Environment and targets](#environment-and-targets)
+  - [OSD settings](#osd-settings)
+- [Additional notes](#additional-notes)
 
 ## Specifications  
 
@@ -33,7 +33,7 @@ Official product page: <https://haieronline.ru/catalog/electronics/tvs/le43k6700
 | Response time      | 8 ms (GtG, approx.) |
 
 
-### Color Characteristics
+### Color characteristics
 
 Not specified
 
@@ -41,7 +41,7 @@ Not specified
 
 Calibration objective: **SDR Rec. 709** with _universal_ luminance **140 cd/m²**  
 
-### Environment And Targets
+### Environment and targets
 
 **Calibration environment**
 | Parameter          | Value        |
@@ -58,7 +58,7 @@ Calibration objective: **SDR Rec. 709** with _universal_ luminance **140 cd/m²*
 | Target gamma       | 2.2          |
 | Target luminance   | 140 cd/m²    |
 
-### OSD Settings  
+### OSD settings  
 
 - Common settings:  
     - Backlight: 41
@@ -81,12 +81,12 @@ Calibration objective: **SDR Rec. 709** with _universal_ luminance **140 cd/m²*
     - Game Mode: Off
     - PC Mode: Off
 
-## Additional Notes
+## Additional notes
 
 - An alternative launcher improves UI responsiveness  
 - Factory white point: ~9700 K  
 - Online 4K playback may be sluggish  
 
 <p align="right">
-  <a href="#table-of-contents">Back To Top ⬆️</a>
+  <a href="#table-of-contents">⬆ Top</a>
 </p>

@@ -4,14 +4,14 @@
 
 Official product page: [URL]
 
-[![Page Status](https://img.shields.io/badge/Page%20Status-Draft-orange)](#)
+[![Page status](https://img.shields.io/badge/Page%20status-draft-orange)](#)
 
-## Table Of Contents
+## Table of contents
 
 - [Specifications](#specifications)
-  - [Color Characteristics](#color-characteristics)
-- [Daily Use Configuration](#daily-use-configuration)
-  - [Display Settings](#display-settings)
+  - [Color characteristics](#color-characteristics)
+- [Daily use configuration](#daily-use-configuration)
+  - [Display settings](#display-settings)
   - [Accessibility — Display & Text Size](#accessibility--display--text-size)
   - [Accessibility — Motion](#accessibility--motion)
 - [Notes](#notes)
@@ -35,20 +35,20 @@ Official product page: [URL]
 | Color Gamut         |       |
 | Contrast Ratio      |       |
 
-### Color Characteristics
+### Color characteristics
 
 - Wide Color Gamut (WCG)
   - [Description]
 - Color depth
   - [Description]
 
-## Daily Use Configuration
+## Daily use configuration
 
 Objective: Long-term daily use with maximum visual comfort while maintaining readability and natural display reproduction.
 
 Priority: **long-term visual comfort → readability → luminance control → natural and stable image reproduction → other parameters.**
 
-### Display Settings
+### Display settings
 
 | Parameter                      | Value | Reason |
 | ------------------------------ | ----- | ------ |
@@ -108,5 +108,5 @@ Unless otherwise stated, all documentation is released under the MIT License.
 Display measurements and configuration recommendations are provided for educational and research purposes.
 
 <p align="right">
-  <a href="#table-of-contents">Back To Top ⬆️</a>
+  <a href="#table-of-contents">⬆ Top</a>
 </p>

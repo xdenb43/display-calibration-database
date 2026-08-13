@@ -7,14 +7,14 @@ Settings optimized for **long-term visual comfort, readability and stable image 
 
 Official product page: <https://consumer.huawei.com/ru/tablets/matepad-2022/specs/>
 
-[![Page Status](https://img.shields.io/badge/Page%20Status-Validated-success)](#)
+[![Page status](https://img.shields.io/badge/Page%20status-validated-success)](#)
 
-## Table Of Contents
+## Table of contents
 
 - [Specifications](#specifications)
-  - [Color Characteristics](#color-characteristics)
-- [Daily Use Configuration](#daily-use-configuration)
-  - [Recommended System Settings (Eye Comfort)](#recommended-system-settings-eye-comfort)
+  - [Color characteristics](#color-characteristics)
+- [Daily use configuration](#daily-use-configuration)
+  - [Recommended display settings (eye comfort)](#recommended-display-settings-eye-comfort)
 
 ## Specifications  
 
@@ -35,18 +35,18 @@ Official product page: <https://consumer.huawei.com/ru/tablets/matepad-2022/spec
 
 
 
-### Color Characteristics  
+### Color characteristics  
 
 - Wide Color Gamut (WCG)  
     - Not officially specified by the manufacturer  
 - Color depth  
     - 16.7 million colors (manufacturer declared)  
 
-## Daily Use Configuration   
+## Daily use configuration   
 
 The priority here is: **long-term visual comfort → readability → luminance control → natural and stable image reproduction → other parameters.**  
 
-### Recommended System Settings (Eye Comfort)
+### Recommended display settings (eye comfort)
 
 | Parameter                                    | Value                            | Reason                                                                                                                                                                                                                                                                                                                                |
 | -------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -60,5 +60,5 @@ The priority here is: **long-term visual comfort → readability → luminance c
 | Smart Resolution (Умное разрешение)          | OFF (Выкл.)                      | Disabling Smart Resolution provides noticeably smoother and more responsive system operation on this device. Since the tablet already operates at its native **2000 × 1200** resolution, adaptive resolution management provides no demonstrated visual-comfort benefit and may introduce unnecessary processing overhead or transitions. |
 
 <p align="right">
-  <a href="#table-of-contents">Back To Top ⬆️</a>
+  <a href="#table-of-contents">⬆ Top</a>
 </p>

@@ -7,14 +7,14 @@ Settings optimized for **long-term visual comfort, readability and stable image 
 
 Official product page: <https://consumer.huawei.com/ru/tablets/matepad-11-5-s/specs/>
 
-[![Page Status](https://img.shields.io/badge/Page%20Status-Validated-success)](#)
+[![Page status](https://img.shields.io/badge/Page%20status-validated-success)](#)
 
-## Table Of Contents
+## Table of contents
 
 - [Specifications](#specifications)
-  - [Color Characteristics](#color-characteristics)
-- [Daily Use Configuration](#daily-use-configuration)
-  - [Recommended System Settings (Eye Comfort + Work + Drawing)](#recommended-system-settings-eye-comfort--work--drawing)
+  - [Color characteristics](#color-characteristics)
+- [Daily use configuration](#daily-use-configuration)
+  - [Recommended display settings (eye comfort + work + drawing)](#recommended-display-settings-eye-comfort--work--drawing)
 
 ## Specifications  
 
@@ -34,18 +34,18 @@ Official product page: <https://consumer.huawei.com/ru/tablets/matepad-11-5-s/sp
 | Contrast Ratio      | 1500:1                                 |
 
 
-### Color Characteristics  
+### Color characteristics  
 
 - Wide Color Gamut (WCG)  
     - P3 wide color gamut (manufacturer declared)  
 - Color depth  
     - 16.7 million colors (manufacturer declared)  
 
-## Daily Use Configuration   
+## Daily use configuration   
 
 The priority here is: **long-term visual comfort → readability → luminance control → natural and stable image reproduction → other parameters.**  
 
-### Recommended System Settings (Eye Comfort + Work + Drawing)
+### Recommended display settings (eye comfort + work + drawing)
 
 | Parameter                                    | Value                            | Reason                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | -------------------------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -65,5 +65,5 @@ The priority here is: **long-term visual comfort → readability → luminance c
 
 
 <p align="right">
-  <a href="#table-of-contents">Back To Top ⬆️</a>
+  <a href="#table-of-contents">⬆ Top</a>
 </p>

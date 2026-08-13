@@ -130,5 +130,5 @@ Calibration objective: **Visual comfort with reduced eye strain during prolonged
 |        100         |        351        |
 
 <p align="right">
-  <a href="#table-of-contents">Back to top ⬆️</a>
+  <a href="#table-of-contents">⬆ Top</a>
 </p>
