@@ -61,5 +61,5 @@ The priority here is: **visual comfort → readability → luminance control →
 | Screen Resolution (Разрешение экрана)        | High (Высокое)                   | Preserves the native 2340 × 1080 resolution and maximum available text and fine-detail clarity at approximately 422 ppi. Lowering the resolution provides no clear visual-comfort advantage for this use case.        |
 
 <p align="right">
-  <a href="#table-of-contents">Back to Top ⬆️</a>
+  <a href="#table-of-contents">Back to top ⬆️</a>
 </p>

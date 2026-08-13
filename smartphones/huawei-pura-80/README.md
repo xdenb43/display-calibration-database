@@ -61,5 +61,5 @@ The priority here is: **long-term visual comfort → readability → luminance c
 | Refresh Rate (Частота обновления)            | High / 120 Hz — Recommended; Standard / 60 Hz — Power Saving | Fixed 120 Hz provides smoother scrolling and interaction and was subjectively more comfortable for you than Dynamic mode. Fixed 60 Hz remains a valid option when battery life is prioritized.                                                                |
 
 <p align="right">
-  <a href="#table-of-contents">Back to Top ⬆️</a>
+  <a href="#table-of-contents">Back to top ⬆️</a>
 </p>

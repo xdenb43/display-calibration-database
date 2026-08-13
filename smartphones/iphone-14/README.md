@@ -88,5 +88,5 @@ The priority here is: **visual comfort → readability → controlled luminance 
 | Prefer Non-Blinking Cursor (Предпочтение курсора без мигания)             | OFF (Выкл.)       | The standard blinking cursor provides a visual indication of the current text-entry position. Disabling blinking is mainly useful for users who find cursor animation distracting.                                                                                                 |
 
 <p align="right">
-  <a href="#table-of-contents">Back to Top ⬆️</a>
+  <a href="#table-of-contents">Back to top ⬆️</a>
 </p>
