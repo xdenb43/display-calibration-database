@@ -39,7 +39,7 @@ Official product page: <https://support.apple.com/en-us/111872>
 
 ### Color characteristics  
 
-- Wide Color Gamut (WCG)  
+- Color gamut  
     - Wide Color Gamut (P3) (manufacturer declared)    
 - Color depth  
     - Not officially specified by Apple    

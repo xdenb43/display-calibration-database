@@ -38,8 +38,9 @@ Official product page:  <https://www.dahuasecurity.com/mena/products/All-Product
 | Response time      | 1 ms            |
 
 
-### Color characteristics
-- Wide Color Gamut (WCG) declared by manufacturer
+### Color characteristics  
+
+- Wide Color Gamut (WCG) declared by manufacturer  
 - Known color gamut:  
     - sRGB: ~ 99%  
     - NTSC: 85%  

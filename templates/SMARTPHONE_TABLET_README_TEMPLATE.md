@@ -37,7 +37,7 @@ Official product page: [URL]
 
 ### Color characteristics
 
-- Wide Color Gamut (WCG)
+- Color gamut 
   - [Description]
 - Color depth
   - [Description]
