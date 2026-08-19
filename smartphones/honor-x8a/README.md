@@ -1,7 +1,7 @@
 # Honor X8a (CRT-LX1) 
 
 HONOR X8a features a 6.7-inch LTPS LCD display with a 90 Hz refresh rate and HONOR Display Color Calibration.  
-The display includes eye comfort features such as TÜV Rheinland Low Blue Light certification, designed to reduce blue light exposure during prolonged use. :contentReference[oaicite:1]{index=1}
+The display includes eye comfort features such as TÜV Rheinland Low Blue Light certification, designed to reduce blue light exposure during prolonged use.  
   
 Settings optimized for visual comfort while maintaining natural color reproduction and maximum display clarity.  
 
