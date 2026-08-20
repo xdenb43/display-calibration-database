@@ -5,8 +5,8 @@ import yaml
 
 
 CONFIG_FILE = Path(".github/display-file-check.yml")
-DOCS_DIR = Path("docs")
-BADGES_DIR = DOCS_DIR / "badges"
+ROOT_DIR = Path(".")
+BADGES_DIR = ROOT_DIR / "badges"
 
 
 def create_badge(
@@ -172,7 +172,7 @@ def main():
     BADGES_DIR.mkdir(parents=True, exist_ok=True)
 
     for category in categories:
-        category_dir = DOCS_DIR / category
+        category_dir = ROOT_DIR / category
 
         if not category_dir.is_dir():
             print(f"WARNING: category does not exist: {category_dir}")
