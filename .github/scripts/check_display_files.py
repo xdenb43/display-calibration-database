@@ -31,81 +31,28 @@ META_DIR = ROOT_DIR / ".meta"
 # Source:
 # https://github.com/badges/shields/blob/master/badge-maker/lib/color.js
 #
-# green        = #67ac09
-# orange       = #ea7233
-# red          = #dd4343
-#
-# Aliases:
-# important    -> orange
-# critical     -> red
-# informational -> blue
+# green      = #67AC09
+# important  = #EA7233
+# critical   = #DD4343
+# inactive   = #9F9F9F
 # ============================================================
 
 SHIELDS_COLORS = {
     "green": "#67AC09",
     "important": "#EA7233",
     "critical": "#DD4343",
+    "inactive": "#9F9F9F",
 }
 
 
-def darken_color(
-    hex_color: str,
-    factor: float = 0.90,
-) -> str:
-
-    """
-    Darken a HEX color.
-
-    factor = 1.00 -> unchanged
-    factor = 0.90 -> 10% darker
-    """
-
-    hex_color = hex_color.lstrip("#")
-
-    red = int(hex_color[0:2], 16)
-    green = int(hex_color[2:4], 16)
-    blue = int(hex_color[4:6], 16)
-
-    red = round(red * factor)
-    green = round(green * factor)
-    blue = round(blue * factor)
-
-    return (
-        f"#{red:02X}"
-        f"{green:02X}"
-        f"{blue:02X}"
-    )
-
-
-def get_gradient_colors(
-    shields_color: str,
-) -> tuple[str, str]:
-
-    """
-    Return the exact Shields.io color as the
-    top gradient stop and a slightly darker
-    version as the bottom stop.
-    """
-
-    top_color = SHIELDS_COLORS[
-        shields_color
-    ]
-
-    bottom_color = darken_color(
-        top_color,
-        0.90,
-    )
-
-    return (
-        top_color,
-        bottom_color,
-    )
-
+# ============================================================
+# Badge generation
+# ============================================================
 
 def create_badge(
     label: str,
     message: str,
-    color: tuple[str, str],
+    color: str,
     label_width: int,
     message_width: int,
 ) -> str:
@@ -123,116 +70,28 @@ def create_badge(
 
     <title>{html.escape(label)}: {html.escape(message)}</title>
 
-    <defs>
-
-        <!-- Neutral graphite label -->
-        <linearGradient id="labelGradient"
-                        x1="0" y1="0"
-                        x2="0" y2="1">
-
-            <stop offset="0%"
-                  stop-color="#59616a"/>
-
-            <stop offset="100%"
-                  stop-color="#454b52"/>
-
-        </linearGradient>
-
-        <!-- Shields.io based status color -->
-        <linearGradient id="messageGradient"
-                        x1="0" y1="0"
-                        x2="0" y2="1">
-
-            <stop offset="0%"
-                  stop-color="{color[0]}"/>
-
-            <stop offset="100%"
-                  stop-color="{color[1]}"/>
-
-        </linearGradient>
-
-        <!-- Subtle top highlight -->
-        <linearGradient id="highlightGradient"
-                        x1="0" y1="0"
-                        x2="0" y2="1">
-
-            <stop offset="0%"
-                  stop-color="#ffffff"
-                  stop-opacity="0.16"/>
-
-            <stop offset="55%"
-                  stop-color="#ffffff"
-                  stop-opacity="0.04"/>
-
-            <stop offset="100%"
-                  stop-color="#ffffff"
-                  stop-opacity="0"/>
-
-        </linearGradient>
-
-    </defs>
-
-    <!-- Label -->
-    <rect x="0"
-          y="0"
-          width="{label_width}"
+    <rect width="{total_width}"
           height="20"
-          rx="4"
-          fill="url(#labelGradient)"/>
+          rx="3"
+          fill="#555"/>
 
-    <!-- Status -->
     <rect x="{label_width}"
-          y="0"
           width="{message_width}"
           height="20"
-          rx="4"
-          fill="url(#messageGradient)"/>
+          fill="{color}"/>
 
-    <!-- Hide the inner rounded corner between segments -->
-    <rect x="{label_width - 4}"
-          y="0"
-          width="8"
-          height="20"
-          fill="url(#labelGradient)"/>
-
-    <rect x="{label_width}"
-          y="0"
-          width="4"
-          height="20"
-          fill="url(#messageGradient)"/>
-
-    <!-- Subtle highlight -->
-    <rect x="0"
-          y="0"
-          width="{total_width}"
-          height="10"
-          rx="4"
-          fill="url(#highlightGradient)"/>
-
-    <!-- Soft outer border -->
-    <rect x="0.5"
-          y="0.5"
-          width="{total_width - 1}"
-          height="19"
-          rx="3.5"
-          fill="none"
-          stroke="#000000"
-          stroke-opacity="0.20"/>
-
-    <!-- Text -->
-    <g fill="#ffffff"
+    <g fill="#fff"
        text-anchor="middle"
        font-family="Verdana,DejaVu Sans,sans-serif"
-       font-size="11"
-       font-weight="400">
+       font-size="11">
 
         <text x="{label_width / 2}"
-              y="14.5">
+              y="15">
             {html.escape(label)}
         </text>
 
         <text x="{label_width + message_width / 2}"
-              y="14.5">
+              y="15">
             {html.escape(message)}
         </text>
 
@@ -256,14 +115,11 @@ def write_badge(
         else "unavailable"
     )
 
-    if available:
-        color = get_gradient_colors(
-            "green"
-        )
-    else:
-        color = get_gradient_colors(
-            "critical"
-        )
+    color = (
+        SHIELDS_COLORS["green"]
+        if available
+        else SHIELDS_COLORS["critical"]
+    )
 
     path.parent.mkdir(
         parents=True,
@@ -281,6 +137,10 @@ def write_badge(
         encoding="utf-8",
     )
 
+
+# ============================================================
+# Page status
+# ============================================================
 
 def is_page_draft(
     readme_file: Path,
@@ -309,9 +169,9 @@ def write_status_badge(
 
         message = "draft"
 
-        color = get_gradient_colors(
+        color = SHIELDS_COLORS[
             "important"
-        )
+        ]
 
         message_width = 50
 
@@ -319,9 +179,9 @@ def write_status_badge(
 
         message = "validated"
 
-        color = get_gradient_colors(
+        color = SHIELDS_COLORS[
             "green"
-        )
+        ]
 
         message_width = 68
 
@@ -342,6 +202,10 @@ def write_status_badge(
     )
 
 
+# ============================================================
+# Global Draft pages badge
+# ============================================================
+
 def write_draft_pages_badge(
     path: Path,
     draft_count: int,
@@ -350,21 +214,27 @@ def write_draft_pages_badge(
     """
     Generate the global Draft pages badge.
 
-    This badge is stored in:
+    0 Draft pages:
+        inactive / grey
 
-        .meta/draft-pages.svg
-
-    It uses the Shields.io 'important' color
-    for consistency with the Page status / Draft badge.
+    1+ Draft pages:
+        important / orange
     """
 
-    color = get_gradient_colors(
-        "important"
-    )
+    if draft_count > 0:
+
+        color = SHIELDS_COLORS[
+            "important"
+        ]
+
+    else:
+
+        color = SHIELDS_COLORS[
+            "inactive"
+        ]
 
     message = str(draft_count)
 
-    # Width suitable for a numeric counter.
     message_width = max(
         32,
         22 + len(message) * 7,
@@ -386,6 +256,10 @@ def write_draft_pages_badge(
         encoding="utf-8",
     )
 
+
+# ============================================================
+# ICC download redirect
+# ============================================================
 
 def create_redirect(
     redirect_path: Path,
@@ -480,6 +354,10 @@ def create_redirect(
     )
 
 
+# ============================================================
+# Verification report redirect
+# ============================================================
+
 def create_page_redirect(
     redirect_path: Path,
     target_file: Path | None,
@@ -543,6 +421,10 @@ def create_page_redirect(
     )
 
 
+# ============================================================
+# File detection
+# ============================================================
+
 def find_first_file(
     device_dir: Path,
     extensions: set[str],
@@ -562,6 +444,11 @@ def find_first_file(
 
     return None
 
+
+# ============================================================
+# Remove ICC/report badges from categories
+# where they are not allowed
+# ============================================================
 
 def remove_file_badges(
     device_dir: Path,
@@ -594,9 +481,13 @@ def remove_file_badges(
             )
 
 
+# ============================================================
+# Main
+# ============================================================
+
 def main():
 
-    # Global counter for all Draft pages.
+    # Global Draft page counter.
     draft_pages = 0
 
     for category in CATEGORIES:
@@ -683,9 +574,6 @@ def main():
                 in FILE_BADGE_CATEGORIES
             ):
 
-                # Only files directly inside
-                # the device directory.
-
                 icc_file = find_first_file(
                     device_dir,
                     {
@@ -724,7 +612,7 @@ def main():
                 )
 
                 # --------------------------------------------------
-                # Verification badge
+                # Verification report badge
                 # --------------------------------------------------
 
                 write_badge(
@@ -758,8 +646,8 @@ def main():
             else:
 
                 # --------------------------------------------------
-                # Remove old ICC / report badges
-                # from categories where they are not allowed.
+                # Remove old ICC/report badges from categories
+                # where they are not allowed.
                 # --------------------------------------------------
 
                 remove_file_badges(
@@ -769,12 +657,15 @@ def main():
     # ============================================================
     # Global Draft pages badge
     #
-    # Generated after ALL categories have been processed.
+    # 0:
+    #     inactive / grey
     #
-    # Example:
+    # 1+:
+    #     important / orange
+    #
+    # Generated:
     #
     # .meta/draft-pages.svg
-    #
     # ============================================================
 
     write_draft_pages_badge(
