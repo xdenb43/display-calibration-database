@@ -27,10 +27,10 @@
                         x2="0" y2="1">
 
             <stop offset="0%"
-                  stop-color="#4CAF50"/>
+                  stop-color="#2E9B6F"/>
 
             <stop offset="100%"
-                  stop-color="#43A047"/>
+                  stop-color="#25865F"/>
 
         </linearGradient>
 
