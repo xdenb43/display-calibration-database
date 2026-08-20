@@ -31,6 +31,10 @@ BADGE_GENERATOR = (
 
 META_DIR = ROOT_DIR / ".meta"
 
+DRAFT_PAGES_DIR = (
+    META_DIR / "draft-pages"
+)
+
 
 # ============================================================
 # Shields.io colors
@@ -201,8 +205,118 @@ def write_status_badge(
 
 
 # ============================================================
+# Draft page marker
+# ============================================================
+
+def get_draft_marker_name(
+    category: str,
+    device_dir: Path,
+) -> str:
+    """
+    Build the filename used as a marker for a Draft page.
+
+    Example:
+
+        category:
+            monitors
+
+        device directory:
+            dell-123
+
+        marker:
+            monitors_dell_123
+    """
+
+    device_name = (
+        device_dir.name
+        .replace("-", "_")
+    )
+
+    return (
+        f"{category}_{device_name}"
+    )
+
+
+def create_draft_marker(
+    category: str,
+    device_dir: Path,
+):
+    """
+    Create an empty marker file for a Draft page.
+    """
+
+    DRAFT_PAGES_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    marker_name = get_draft_marker_name(
+        category,
+        device_dir,
+    )
+
+    marker_path = (
+        DRAFT_PAGES_DIR / marker_name
+    )
+
+    marker_path.touch()
+
+    return marker_path
+
+
+# ============================================================
+# Draft marker cleanup
+# ============================================================
+
+def cleanup_draft_markers(
+    active_markers: set[str],
+):
+    """
+    Remove obsolete Draft page markers.
+
+    Only files whose names are not present in
+    active_markers are removed.
+    """
+
+    DRAFT_PAGES_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    for marker_path in DRAFT_PAGES_DIR.iterdir():
+
+        if not marker_path.is_file():
+            continue
+
+        if marker_path.name not in active_markers:
+
+            marker_path.unlink()
+
+            print(
+                f"    Removed stale Draft marker: "
+                f"{marker_path}"
+            )
+
+
+# ============================================================
 # Global Draft pages badge
 # ============================================================
+
+def get_draft_pages_count() -> int:
+    """
+    Return the number of Draft pages based exclusively
+    on the files currently present in .meta/draft-pages/.
+    """
+
+    if not DRAFT_PAGES_DIR.is_dir():
+        return 0
+
+    return sum(
+        1
+        for path in DRAFT_PAGES_DIR.iterdir()
+        if path.is_file()
+    )
+
 
 def write_draft_pages_badge(
     path: Path,
@@ -508,8 +622,26 @@ def remove_file_badges(
 
 def main():
 
-    draft_pages = 0
+    # ========================================================
+    # Prepare Draft pages metadata directory
+    # ========================================================
 
+    DRAFT_PAGES_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+
+    # ========================================================
+    # Track all currently active Draft markers
+    # ========================================================
+
+    active_draft_markers: set[str] = set()
+
+
+    # ========================================================
+    # Process categories and devices
+    # ========================================================
 
     for category in CATEGORIES:
 
@@ -586,13 +718,38 @@ def main():
 
             if is_draft:
 
-                draft_pages += 1
+                marker_name = (
+                    get_draft_marker_name(
+                        category,
+                        device_dir,
+                    )
+                )
 
+                active_draft_markers.add(
+                    marker_name
+                )
 
-            print(
-                f"    Status: "
-                f"{'draft' if is_draft else 'validated'}"
-            )
+                marker_path = (
+                    create_draft_marker(
+                        category,
+                        device_dir,
+                    )
+                )
+
+                print(
+                    f"    Status: draft"
+                )
+
+                print(
+                    f"    Draft marker: "
+                    f"{marker_path}"
+                )
+
+            else:
+
+                print(
+                    f"    Status: validated"
+                )
 
 
             # ==================================================
@@ -698,7 +855,24 @@ def main():
 
 
     # ============================================================
+    # Remove obsolete Draft markers
+    #
+    # At this point active_draft_markers contains the complete
+    # list of Draft pages found during this run.
+    # ============================================================
+
+    cleanup_draft_markers(
+        active_draft_markers
+    )
+
+
+    # ============================================================
     # Global Draft pages badge
+    #
+    # IMPORTANT:
+    #
+    # The badge count is now calculated ONLY from the files
+    # present in .meta/draft-pages/.
     #
     # 0:
     #     inactive
@@ -710,6 +884,11 @@ def main():
     #
     # .meta/draft-pages.svg
     # ============================================================
+
+    draft_pages = (
+        get_draft_pages_count()
+    )
+
 
     write_draft_pages_badge(
         META_DIR / "draft-pages.svg",
@@ -723,10 +902,20 @@ def main():
 
 
     print(
+        f"Draft metadata directory: "
+        f"{DRAFT_PAGES_DIR}"
+    )
+
+
+    print(
         f"Generated: "
         f"{META_DIR / 'draft-pages.svg'}"
     )
 
+
+# ============================================================
+# Entry point
+# ============================================================
 
 if __name__ == "__main__":
     main()
