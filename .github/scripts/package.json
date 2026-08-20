@@ -1,0 +1,8 @@
+{
+  "name": "display-configuration-badge-generator",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "badge-maker": "^4.0.0"
+  }
+}

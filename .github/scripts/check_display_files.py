@@ -1,5 +1,6 @@
 from pathlib import Path
 import html
+import subprocess
 
 
 ROOT_DIR = Path(".")
@@ -19,306 +20,79 @@ FILE_BADGE_CATEGORIES = {
 
 
 # ============================================================
-# Global generated metadata
+# Paths
 # ============================================================
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+BADGE_GENERATOR = (
+    SCRIPT_DIR / "generate_badge.js"
+)
 
 META_DIR = ROOT_DIR / ".meta"
 
 
 # ============================================================
-# Shields.io palette
+# Shields.io colors
 #
-# Source:
-# https://github.com/badges/shields/blob/master/badge-maker/lib/color.js
-#
-# green      = #67AC09
-# important  = #EA7233
-# critical   = #DD4343
-# inactive   = #9F9F9F
+# These names are passed directly to badge-maker.
 # ============================================================
 
 SHIELDS_COLORS = {
-    "green": "#67AC09",
-    "important": "#EA7233",
-    "critical": "#DD4343",
-    "inactive": "#9F9F9F",
+    "green": "green",
+    "important": "important",
+    "critical": "critical",
+    "inactive": "inactive",
 }
-
-
-# ============================================================
-# Color helpers
-# ============================================================
-
-def darken_color(
-    hex_color: str,
-    factor: float = 0.94,
-) -> str:
-
-    """
-    Create a slightly darker version of a HEX color.
-
-    factor:
-        1.00 -> unchanged
-        0.94 -> slightly darker
-    """
-
-    hex_color = hex_color.lstrip("#")
-
-    red = int(hex_color[0:2], 16)
-    green = int(hex_color[2:4], 16)
-    blue = int(hex_color[4:6], 16)
-
-    red = round(red * factor)
-    green = round(green * factor)
-    blue = round(blue * factor)
-
-    return (
-        f"#{red:02X}"
-        f"{green:02X}"
-        f"{blue:02X}"
-    )
-
-
-def get_gradient_colors(
-    shields_color: str,
-) -> tuple[str, str]:
-
-    """
-    Return a very subtle vertical gradient.
-
-    The top color is the exact Shields.io color.
-    The bottom color is only slightly darker.
-    """
-
-    top_color = SHIELDS_COLORS[
-        shields_color
-    ]
-
-    bottom_color = darken_color(
-        top_color,
-        0.94,
-    )
-
-    return (
-        top_color,
-        bottom_color,
-    )
 
 
 # ============================================================
 # Badge generation
 # ============================================================
 
-def create_badge(
-    label: str,
-    message: str,
-    color: tuple[str, str],
-    label_width: int,
-    message_width: int,
-) -> str:
-
-    total_width = (
-        label_width
-        + message_width
-    )
-
-    return f'''<svg xmlns="http://www.w3.org/2000/svg"
-    width="{total_width}"
-    height="20"
-    role="img"
-    aria-label="{html.escape(label)}: {html.escape(message)}">
-
-    <title>{html.escape(label)}: {html.escape(message)}</title>
-
-    <defs>
-
-        <!--
-            Very subtle Shields-inspired gradient
-            for the label section.
-        -->
-        <linearGradient id="labelGradient"
-                        x1="0"
-                        y1="0"
-                        x2="0"
-                        y2="1">
-
-            <stop offset="0%"
-                  stop-color="#5A5A5A"/>
-
-            <stop offset="100%"
-                  stop-color="#505050"/>
-
-        </linearGradient>
-
-
-        <!--
-            Very subtle status gradient.
-            Keeps the Shields.io base color
-            while avoiding a completely flat look.
-        -->
-        <linearGradient id="messageGradient"
-                        x1="0"
-                        y1="0"
-                        x2="0"
-                        y2="1">
-
-            <stop offset="0%"
-                  stop-color="{color[0]}"/>
-
-            <stop offset="100%"
-                  stop-color="{color[1]}"/>
-
-        </linearGradient>
-
-
-        <!--
-            Very soft top highlight.
-            Much weaker than the original version.
-        -->
-        <linearGradient id="highlightGradient"
-                        x1="0"
-                        y1="0"
-                        x2="0"
-                        y2="1">
-
-            <stop offset="0%"
-                  stop-color="#FFFFFF"
-                  stop-opacity="0.08"/>
-
-            <stop offset="60%"
-                  stop-color="#FFFFFF"
-                  stop-opacity="0.02"/>
-
-            <stop offset="100%"
-                  stop-color="#FFFFFF"
-                  stop-opacity="0"/>
-
-        </linearGradient>
-
-    </defs>
-
-
-    <!-- =====================================================
-         Base badge
-         ===================================================== -->
-
-    <rect x="0"
-          y="0"
-          width="{total_width}"
-          height="20"
-          rx="3.5"
-          fill="#555555"/>
-
-
-    <!-- =====================================================
-         Label section
-         ===================================================== -->
-
-    <path
-        d="
-            M 3.5 0
-            H {label_width}
-            V 20
-            H 3.5
-            A 3.5 3.5 0 0 1 0 16.5
-            V 3.5
-            A 3.5 3.5 0 0 1 3.5 0
-            Z
-        "
-        fill="url(#labelGradient)"
-    />
-
-
-    <!-- =====================================================
-         Message section
-         ===================================================== -->
-
-    <path
-        d="
-            M {label_width} 0
-            H {total_width - 3.5}
-            A 3.5 3.5 0 0 1 {total_width} 3.5
-            V 16.5
-            A 3.5 3.5 0 0 1 {total_width - 3.5} 20
-            H {label_width}
-            Z
-        "
-        fill="url(#messageGradient)"
-    />
-
-
-    <!-- =====================================================
-         Soft highlight
-         ===================================================== -->
-
-    <rect x="0"
-          y="0"
-          width="{total_width}"
-          height="10"
-          rx="3.5"
-          fill="url(#highlightGradient)"/>
-
-
-    <!-- =====================================================
-         Text
-         ===================================================== -->
-
-    <g fill="#FFFFFF"
-       text-anchor="middle"
-       font-family="Verdana,DejaVu Sans,sans-serif"
-       font-size="11"
-       font-weight="400">
-
-        <text x="{label_width / 2}"
-              y="14.5">
-
-            {html.escape(label)}
-
-        </text>
-
-
-        <text x="{label_width + message_width / 2}"
-              y="14.5">
-
-            {html.escape(message)}
-
-        </text>
-
-    </g>
-
-
-</svg>
-'''
-
-
-# ============================================================
-# Standard availability badges
-# ============================================================
-
-def write_badge(
+def generate_badge(
     path: Path,
     label: str,
-    available: bool,
-    label_width: int,
-    message_width: int,
+    message: str,
+    color: str,
 ):
+    """
+    Generate an SVG badge using the official Shields.io
+    badge-maker package through generate_badge.js.
+    """
 
-    message = (
-        "available"
-        if available
-        else "unavailable"
-    )
+    if not BADGE_GENERATOR.exists():
 
-    if available:
-
-        color = get_gradient_colors(
-            "green"
+        raise FileNotFoundError(
+            "Badge generator not found: "
+            f"{BADGE_GENERATOR}"
         )
 
-    else:
+    result = subprocess.run(
+        [
+            "node",
+            str(BADGE_GENERATOR),
+            label,
+            message,
+            color,
+        ],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
 
-        color = get_gradient_colors(
-            "critical"
+    if result.returncode != 0:
+
+        print(
+            "ERROR: badge generation failed."
+        )
+
+        if result.stderr:
+            print(result.stderr)
+
+        raise RuntimeError(
+            "badge-maker returned "
+            f"exit code {result.returncode}"
         )
 
     path.parent.mkdir(
@@ -327,14 +101,51 @@ def write_badge(
     )
 
     path.write_text(
-        create_badge(
-            label,
-            message,
-            color,
-            label_width,
-            message_width,
-        ),
+        result.stdout,
         encoding="utf-8",
+    )
+
+
+# ============================================================
+# Availability badges
+# ============================================================
+
+def write_badge(
+    path: Path,
+    label: str,
+    available: bool,
+):
+    """
+    Generate an availability badge.
+
+    Available:
+        green
+
+    Unavailable:
+        critical
+    """
+
+    if available:
+
+        message = "available"
+
+        color = SHIELDS_COLORS[
+            "green"
+        ]
+
+    else:
+
+        message = "unavailable"
+
+        color = SHIELDS_COLORS[
+            "critical"
+        ]
+
+    generate_badge(
+        path,
+        label,
+        message,
+        color,
     )
 
 
@@ -369,36 +180,23 @@ def write_status_badge(
 
         message = "draft"
 
-        color = get_gradient_colors(
+        color = SHIELDS_COLORS[
             "important"
-        )
-
-        message_width = 50
+        ]
 
     else:
 
         message = "validated"
 
-        color = get_gradient_colors(
+        color = SHIELDS_COLORS[
             "green"
-        )
+        ]
 
-        message_width = 68
-
-    path.parent.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
-    path.write_text(
-        create_badge(
-            "Page status",
-            message,
-            color,
-            88,
-            message_width,
-        ),
-        encoding="utf-8",
+    generate_badge(
+        path,
+        "Page status",
+        message,
+        color,
     )
 
 
@@ -410,50 +208,33 @@ def write_draft_pages_badge(
     path: Path,
     draft_count: int,
 ):
-
     """
     Generate the global Draft pages badge.
 
-    0 Draft pages:
+    0:
         inactive / grey
 
-    1+ Draft pages:
+    1+:
         important / orange
     """
 
     if draft_count > 0:
 
-        color = get_gradient_colors(
+        color = SHIELDS_COLORS[
             "important"
-        )
+        ]
 
     else:
 
-        color = get_gradient_colors(
+        color = SHIELDS_COLORS[
             "inactive"
-        )
+        ]
 
-    message = str(draft_count)
-
-    message_width = max(
-        32,
-        22 + len(message) * 7,
-    )
-
-    path.parent.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
-    path.write_text(
-        create_badge(
-            "Draft pages",
-            message,
-            color,
-            76,
-            message_width,
-        ),
-        encoding="utf-8",
+    generate_badge(
+        path,
+        "Draft pages",
+        str(draft_count),
+        color,
     )
 
 
@@ -476,9 +257,15 @@ def create_redirect(
 
         content = f"""<!doctype html>
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8">
-    <title>File unavailable</title>
+
+    <title>
+        File unavailable
+    </title>
+
 </head>
 
 <body>
@@ -488,6 +275,7 @@ def create_redirect(
 </p>
 
 </body>
+
 </html>
 """
 
@@ -515,7 +303,6 @@ def create_redirect(
 <p>
 
     Downloading
-
     <strong>
         {html.escape(target_file.name)}
     </strong>...
@@ -528,24 +315,17 @@ def create_redirect(
 (function () {{
 
     const url = {target_url!r};
-
     const filename = {target_file.name!r};
-
 
     const link =
         document.createElement("a");
 
-
     link.href = url;
-
     link.download = filename;
-
 
     document.body.appendChild(link);
 
-
     link.click();
-
 
     link.remove();
 
@@ -572,6 +352,7 @@ def create_redirect(
 
 
 </body>
+
 </html>
 """
 
@@ -614,9 +395,7 @@ def create_page_redirect(
 <body>
 
 <p>
-
     {html.escape(unavailable_message)}
-
 </p>
 
 </body>
@@ -649,9 +428,7 @@ def create_page_redirect(
 <body>
 
 <p>
-
     Opening verification report...
-
 </p>
 
 </body>
@@ -731,7 +508,6 @@ def remove_file_badges(
 
 def main():
 
-    # Global Draft page counter.
     draft_pages = 0
 
 
@@ -784,6 +560,12 @@ def main():
             # Page status
             #
             # Generated for ALL categories.
+            #
+            # <!-- PAGE_STATUS: DRAFT -->
+            #     -> important
+            #
+            # No marker
+            #     -> green
             # ==================================================
 
             readme_file = (
@@ -855,8 +637,6 @@ def main():
                     badges_dir / "icc.svg",
                     "ICC profile",
                     icc_file is not None,
-                    90,
-                    84,
                 )
 
 
@@ -879,8 +659,6 @@ def main():
                     badges_dir / "report.svg",
                     "Verification report",
                     report_file is not None,
-                    118,
-                    91,
                 )
 
 
@@ -923,10 +701,10 @@ def main():
     # Global Draft pages badge
     #
     # 0:
-    #     inactive / grey
+    #     inactive
     #
     # 1+:
-    #     important / orange
+    #     important
     #
     # Generated:
     #

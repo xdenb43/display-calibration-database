@@ -16,3 +16,6 @@ Thumbs.db
 # Python cache (for possible future tools)
 __pycache__/
 *.pyc
+
+# Node.js dependencies
+.github/scripts/node_modules/
