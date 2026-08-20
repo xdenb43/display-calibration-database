@@ -3,6 +3,7 @@ import html
 
 
 ROOT_DIR = Path(".")
+
 CATEGORIES = [
     "monitors",
     "laptops",
@@ -10,6 +11,11 @@ CATEGORIES = [
     "tv",
     "smartphones",
 ]
+
+FILE_BADGE_CATEGORIES = {
+    "monitors",
+    "laptops",
+}
 
 
 def create_badge(
@@ -81,17 +87,33 @@ def write_badge(
         encoding="utf-8",
     )
 
+
+def is_page_draft(readme_file: Path) -> bool:
+
+    if not readme_file.exists():
+        return False
+
+    content = readme_file.read_text(
+        encoding="utf-8",
+        errors="ignore",
+    )
+
+    return "<!-- PAGE_STATUS: DRAFT -->" in content
+
+
 def write_status_badge(
     path: Path,
     is_draft: bool,
 ):
+
     if is_draft:
         message = "draft"
         color = "#f9a825"
+        message_width = 50
     else:
         message = "validated"
         color = "#2ea44f"
-        color = "#2ea44f"
+        message_width = 68
 
     path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -101,10 +123,11 @@ def write_status_badge(
             message,
             color,
             88,
-            70 if is_draft else 82,
+            message_width,
         ),
         encoding="utf-8",
     )
+
 
 def create_redirect(
     redirect_path: Path,
@@ -130,7 +153,6 @@ def create_redirect(
 
     else:
 
-        # Target file is located one directory above "badges".
         target_url = f"../{target_file.name}"
 
         content = f"""<!doctype html>
@@ -180,14 +202,17 @@ def create_redirect(
         encoding="utf-8",
     )
 
+
 def create_page_redirect(
     redirect_path: Path,
     target_file: Path | None,
     unavailable_message: str,
 ):
+
     redirect_path.parent.mkdir(parents=True, exist_ok=True)
 
     if target_file is None:
+
         content = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -199,7 +224,9 @@ def create_page_redirect(
 </body>
 </html>
 """
+
     else:
+
         target_url = f"../{target_file.name}"
 
         content = f"""<!doctype html>
@@ -210,8 +237,13 @@ def create_page_redirect(
           content="0; url={html.escape(target_url, quote=True)}">
     <title>Verification report</title>
 </head>
+
 <body>
-    <p>Opening verification report...</p>
+
+<p>
+    Opening verification report...
+</p>
+
 </body>
 </html>
 """
@@ -221,7 +253,11 @@ def create_page_redirect(
         encoding="utf-8",
     )
 
-def find_first_file(device_dir: Path, extensions: set[str]):
+
+def find_first_file(
+    device_dir: Path,
+    extensions: set[str],
+):
 
     for file in sorted(device_dir.iterdir()):
 
@@ -233,16 +269,31 @@ def find_first_file(device_dir: Path, extensions: set[str]):
 
     return None
 
-def is_page_draft(readme_file: Path) -> bool:
-    if not readme_file.exists():
-        return False
 
-    content = readme_file.read_text(
-        encoding="utf-8",
-        errors="ignore",
-    )
+def remove_file_badges(device_dir: Path):
 
-    return "<!-- PAGE_STATUS: DRAFT -->" in content
+    badges_dir = device_dir / "badges"
+
+    if not badges_dir.is_dir():
+        return
+
+    for filename in (
+        "icc.svg",
+        "icc.html",
+        "report.svg",
+        "report.html",
+    ):
+
+        file = badges_dir / filename
+
+        if file.exists():
+
+            file.unlink()
+
+            print(
+                f"    Removed: {file}"
+            )
+
 
 def main():
 
@@ -267,72 +318,107 @@ def main():
                 continue
 
             device = device_dir.name
-            
-            readme_file = device_dir / "README.md"
 
-            is_draft = is_page_draft(readme_file)
-
-            write_status_badge(
-                device_dir / "badges" / "status.svg",
-                is_draft,
-            )
-
-            print(f"  Checking: {device}")
-
-            # Only files directly inside the device directory.
-            icc_file = find_first_file(
-                device_dir,
-                {".icc", ".icm"},
-            )
-
-            report_file = find_first_file(
-                device_dir,
-                {".html"},
+            print(
+                f"  Checking: {device}"
             )
 
             badges_dir = device_dir / "badges"
 
-            # ICC badge
-            write_badge(
-                badges_dir / "icc.svg",
-                "ICC profile",
-                icc_file is not None,
-                90,
-                84,
+            # --------------------------------------------------
+            # Page status
+            # --------------------------------------------------
+
+            readme_file = device_dir / "README.md"
+
+            is_draft = is_page_draft(
+                readme_file
             )
 
-            # ICC redirect
-            create_redirect(
-                badges_dir / "icc.html",
-                icc_file,
-                "ICC profile is not available.",
-            )
-
-            # Verification badge
-            write_badge(
-                badges_dir / "report.svg",
-                "Verification report",
-                report_file is not None,
-                118,
-                91,
-            )
-
-            # Verification redirect
-            create_page_redirect(
-                badges_dir / "report.html",
-                report_file,
-                "Verification report is not available.",
+            write_status_badge(
+                badges_dir / "status.svg",
+                is_draft,
             )
 
             print(
-                f"    ICC: "
-                f"{icc_file.name if icc_file else 'unavailable'}"
+                f"    Status: "
+                f"{'draft' if is_draft else 'validated'}"
             )
 
-            print(
-                f"    HTML: "
-                f"{report_file.name if report_file else 'unavailable'}"
-            )
+            # --------------------------------------------------
+            # ICC / HTML badges
+            # Only for selected categories
+            # --------------------------------------------------
+
+            if category in FILE_BADGE_CATEGORIES:
+
+                # Only files directly inside
+                # the device directory.
+
+                icc_file = find_first_file(
+                    device_dir,
+                    {".icc", ".icm"},
+                )
+
+                report_file = find_first_file(
+                    device_dir,
+                    {".html"},
+                )
+
+                # ICC badge
+
+                write_badge(
+                    badges_dir / "icc.svg",
+                    "ICC profile",
+                    icc_file is not None,
+                    90,
+                    84,
+                )
+
+                # ICC download
+
+                create_redirect(
+                    badges_dir / "icc.html",
+                    icc_file,
+                    "ICC profile is not available.",
+                )
+
+                # Verification badge
+
+                write_badge(
+                    badges_dir / "report.svg",
+                    "Verification report",
+                    report_file is not None,
+                    118,
+                    91,
+                )
+
+                # Verification report
+
+                create_page_redirect(
+                    badges_dir / "report.html",
+                    report_file,
+                    "Verification report is not available.",
+                )
+
+                print(
+                    f"    ICC: "
+                    f"{icc_file.name if icc_file else 'unavailable'}"
+                )
+
+                print(
+                    f"    HTML: "
+                    f"{report_file.name if report_file else 'unavailable'}"
+                )
+
+            else:
+
+                # Remove old ICC / report badges
+                # from categories where they are not allowed.
+
+                remove_file_badges(
+                    device_dir
+                )
 
 
 if __name__ == "__main__":
