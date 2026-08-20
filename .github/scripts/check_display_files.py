@@ -18,15 +18,94 @@ FILE_BADGE_CATEGORIES = {
 }
 
 
+# ============================================================
+# Shields.io palette
+#
+# Source:
+# https://github.com/badges/shields/blob/master/badge-maker/lib/color.js
+#
+# green        = #67ac09
+# orange       = #ea7233
+# red          = #dd4343
+#
+# Aliases:
+# important    -> orange
+# critical     -> red
+# ============================================================
+
+SHIELDS_COLORS = {
+    "green": "#67AC09",
+    "important": "#EA7233",
+    "critical": "#DD4343",
+}
+
+
+def darken_color(
+    hex_color: str,
+    factor: float = 0.90,
+) -> str:
+
+    """
+    Darken a HEX color by the specified factor.
+
+    factor = 1.00 -> unchanged
+    factor = 0.90 -> 10% darker
+    """
+
+    hex_color = hex_color.lstrip("#")
+
+    red = int(hex_color[0:2], 16)
+    green = int(hex_color[2:4], 16)
+    blue = int(hex_color[4:6], 16)
+
+    red = round(red * factor)
+    green = round(green * factor)
+    blue = round(blue * factor)
+
+    return (
+        f"#{red:02X}"
+        f"{green:02X}"
+        f"{blue:02X}"
+    )
+
+
+def get_gradient_colors(
+    shields_color: str,
+) -> tuple[str, str]:
+
+    """
+    Return the exact Shields.io color as the
+    top gradient stop and a slightly darker
+    version as the bottom stop.
+    """
+
+    top_color = SHIELDS_COLORS[
+        shields_color
+    ]
+
+    bottom_color = darken_color(
+        top_color,
+        0.90,
+    )
+
+    return (
+        top_color,
+        bottom_color,
+    )
+
+
 def create_badge(
     label: str,
     message: str,
-    color: str,
+    color: tuple[str, str],
     label_width: int,
     message_width: int,
 ) -> str:
 
-    total_width = label_width + message_width
+    total_width = (
+        label_width
+        + message_width
+    )
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg"
     width="{total_width}"
@@ -51,7 +130,7 @@ def create_badge(
 
         </linearGradient>
 
-        <!-- Status color -->
+        <!-- Shields.io based status color -->
         <linearGradient id="messageGradient"
                         x1="0" y1="0"
                         x2="0" y2="1">
@@ -155,48 +234,6 @@ def create_badge(
 '''
 
 
-def get_shields_gradient(
-    color_name: str,
-) -> tuple[str, str]:
-
-    """
-    Approximate the Shields.io named color
-    with a slightly darker second stop for our
-    custom badge gradient.
-
-    Named colors used by the project:
-
-        green      -> validated / available
-        important  -> draft
-        critical   -> unavailable
-
-    The first color corresponds to the Shields
-    named color, while the second one provides
-    the darker gradient stop.
-    """
-
-    colors = {
-
-        "green": (
-            "#97CA00",
-            "#7FAE00",
-        ),
-
-        "important": (
-            "#FE7D37",
-            "#E96824",
-        ),
-
-        "critical": (
-            "#E05D44",
-            "#C94B35",
-        ),
-
-    }
-
-    return colors[color_name]
-
-
 def write_badge(
     path: Path,
     label: str,
@@ -211,15 +248,14 @@ def write_badge(
         else "unavailable"
     )
 
-    color_name = (
-        "green"
-        if available
-        else "critical"
-    )
-
-    color = get_shields_gradient(
-        color_name
-    )
+    if available:
+        color = get_gradient_colors(
+            "green"
+        )
+    else:
+        color = get_gradient_colors(
+            "critical"
+        )
 
     path.parent.mkdir(
         parents=True,
@@ -265,7 +301,7 @@ def write_status_badge(
 
         message = "draft"
 
-        color = get_shields_gradient(
+        color = get_gradient_colors(
             "important"
         )
 
@@ -275,7 +311,7 @@ def write_status_badge(
 
         message = "validated"
 
-        color = get_shields_gradient(
+        color = get_gradient_colors(
             "green"
         )
 
@@ -545,10 +581,17 @@ def main():
                 device_dir / "badges"
             )
 
-            # --------------------------------------------------
+            # ==================================================
             # Page status
-            # Generated for ALL categories
-            # --------------------------------------------------
+            #
+            # Generated for ALL categories.
+            #
+            # <!-- PAGE_STATUS: DRAFT -->
+            #     -> important / orange
+            #
+            # No marker
+            #     -> green
+            # ==================================================
 
             readme_file = (
                 device_dir / "README.md"
@@ -568,12 +611,13 @@ def main():
                 f"{'draft' if is_draft else 'validated'}"
             )
 
-            # --------------------------------------------------
+            # ==================================================
             # ICC / HTML badges
+            #
             # Generated ONLY for:
-            # monitors
-            # laptops
-            # --------------------------------------------------
+            #     monitors
+            #     laptops
+            # ==================================================
 
             if (
                 category
@@ -611,7 +655,7 @@ def main():
                 )
 
                 # --------------------------------------------------
-                # ICC download
+                # ICC download redirect
                 # --------------------------------------------------
 
                 create_redirect(
@@ -633,7 +677,7 @@ def main():
                 )
 
                 # --------------------------------------------------
-                # Verification report
+                # Verification report redirect
                 # --------------------------------------------------
 
                 create_page_redirect(
