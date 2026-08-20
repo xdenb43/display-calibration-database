@@ -10,8 +10,10 @@ This repository contains display settings, ICC/ICM color profiles, verification 
 [![Smartphones](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/smartphones?type=dir&label=Smartphones&color=informational)](https://github.com/xdenb43/display-configuration-database/tree/main/smartphones)
 [![Tablets](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/tablets?type=dir&label=Tablets&color=informational)](https://github.com/xdenb43/display-configuration-database/tree/main/tablets)
 [![TVs](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/tv?type=dir&label=TVs&color=informational)](https://github.com/xdenb43/display-configuration-database/tree/main/tv)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<p align="right">
 [![Draft pages](.meta/draft-pages.svg)](#)
+</p>
 
 ## Table of contents
 
