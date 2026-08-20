@@ -1,3 +1,5 @@
+<!-- PAGE_STATUS: DRAFT -->
+
 # Huawei Matebook X Pro 2020 (MACHC-WAX9)   
 
 **Display panel:** JDI LPM139M422A
@@ -8,7 +10,7 @@ Calibration optimized for visual comfort using Spyder X and DisplayCAL.
 
 Official product page:  <https://consumer.huawei.com/ie/laptops/matebook-x-pro-2020/specs/>  
 
-[![Page status](https://img.shields.io/badge/Page%20status-draft-orange)](#)
+[![Page status](badges/status.svg)](#)
 [![ICC profile](badges/icc.svg)](badges/icc.html)
 [![Verification report](badges/report.svg)](badges/report.html)
 

@@ -81,6 +81,30 @@ def write_badge(
         encoding="utf-8",
     )
 
+def write_status_badge(
+    path: Path,
+    is_draft: bool,
+):
+    if is_draft:
+        message = "draft"
+        color = "#f9a825"
+    else:
+        message = "validated"
+        color = "#2ea44f"
+        color = "#2ea44f"
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    path.write_text(
+        create_badge(
+            "Page status",
+            message,
+            color,
+            88,
+            70 if is_draft else 82,
+        ),
+        encoding="utf-8",
+    )
 
 def create_redirect(
     redirect_path: Path,
@@ -209,6 +233,16 @@ def find_first_file(device_dir: Path, extensions: set[str]):
 
     return None
 
+def is_page_draft(readme_file: Path) -> bool:
+    if not readme_file.exists():
+        return False
+
+    content = readme_file.read_text(
+        encoding="utf-8",
+        errors="ignore",
+    )
+
+    return "<!-- PAGE_STATUS: DRAFT -->" in content
 
 def main():
 
@@ -233,6 +267,15 @@ def main():
                 continue
 
             device = device_dir.name
+            
+            readme_file = device_dir / "README.md"
+
+            is_draft = is_page_draft(readme_file)
+
+            write_status_badge(
+                device_dir / "badges" / "status.svg",
+                is_draft,
+            )
 
             print(f"  Checking: {device}")
 
