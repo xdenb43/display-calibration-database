@@ -21,7 +21,7 @@ FILE_BADGE_CATEGORIES = {
 def create_badge(
     label: str,
     message: str,
-    color: str,
+    color: tuple[str, str],
     label_width: int,
     message_width: int,
 ) -> str:
@@ -169,15 +169,26 @@ def write_badge(
         else "unavailable"
     )
 
+    # Project badge palette:
+    #
+    # Available:
+    #     #2E9B6F -> #25865F
+    #
+    # Unavailable:
+    #     #D65A67 -> #C44856
+
     if available:
+
         color = (
-            "#4CAF50",
-            "#43A047",
+            "#2E9B6F",
+            "#25865F",
         )
+
     else:
+
         color = (
-            "#F44336",
-            "#E53935",
+            "#D65A67",
+            "#C44856",
         )
 
     path.parent.mkdir(
@@ -220,13 +231,21 @@ def write_status_badge(
     is_draft: bool,
 ):
 
+    # Project badge palette:
+    #
+    # Validated:
+    #     #2E9B6F -> #25865F
+    #
+    # Draft:
+    #     #E0A126 -> #C88D18
+
     if is_draft:
 
         message = "draft"
 
         color = (
-            "#FFC107",
-            "#FFB300",
+            "#E0A126",
+            "#C88D18",
         )
 
         message_width = 50
@@ -236,8 +255,8 @@ def write_status_badge(
         message = "validated"
 
         color = (
-            "#4CAF50",
-            "#43A047",
+            "#2E9B6F",
+            "#25865F",
         )
 
         message_width = 68
