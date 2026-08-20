@@ -46,13 +46,73 @@ SHIELDS_COLORS = {
 
 
 # ============================================================
+# Color helpers
+# ============================================================
+
+def darken_color(
+    hex_color: str,
+    factor: float = 0.94,
+) -> str:
+
+    """
+    Create a slightly darker version of a HEX color.
+
+    factor:
+        1.00 -> unchanged
+        0.94 -> slightly darker
+    """
+
+    hex_color = hex_color.lstrip("#")
+
+    red = int(hex_color[0:2], 16)
+    green = int(hex_color[2:4], 16)
+    blue = int(hex_color[4:6], 16)
+
+    red = round(red * factor)
+    green = round(green * factor)
+    blue = round(blue * factor)
+
+    return (
+        f"#{red:02X}"
+        f"{green:02X}"
+        f"{blue:02X}"
+    )
+
+
+def get_gradient_colors(
+    shields_color: str,
+) -> tuple[str, str]:
+
+    """
+    Return a very subtle vertical gradient.
+
+    The top color is the exact Shields.io color.
+    The bottom color is only slightly darker.
+    """
+
+    top_color = SHIELDS_COLORS[
+        shields_color
+    ]
+
+    bottom_color = darken_color(
+        top_color,
+        0.94,
+    )
+
+    return (
+        top_color,
+        bottom_color,
+    )
+
+
+# ============================================================
 # Badge generation
 # ============================================================
 
 def create_badge(
     label: str,
     message: str,
-    color: str,
+    color: tuple[str, str],
     label_width: int,
     message_width: int,
 ) -> str:
@@ -70,36 +130,170 @@ def create_badge(
 
     <title>{html.escape(label)}: {html.escape(message)}</title>
 
-    <rect width="{total_width}"
-          height="20"
-          rx="3"
-          fill="#555"/>
+    <defs>
 
-    <rect x="{label_width}"
-          width="{message_width}"
-          height="20"
-          fill="{color}"/>
+        <!--
+            Very subtle Shields-inspired gradient
+            for the label section.
+        -->
+        <linearGradient id="labelGradient"
+                        x1="0"
+                        y1="0"
+                        x2="0"
+                        y2="1">
 
-    <g fill="#fff"
+            <stop offset="0%"
+                  stop-color="#5A5A5A"/>
+
+            <stop offset="100%"
+                  stop-color="#505050"/>
+
+        </linearGradient>
+
+
+        <!--
+            Very subtle status gradient.
+            Keeps the Shields.io base color
+            while avoiding a completely flat look.
+        -->
+        <linearGradient id="messageGradient"
+                        x1="0"
+                        y1="0"
+                        x2="0"
+                        y2="1">
+
+            <stop offset="0%"
+                  stop-color="{color[0]}"/>
+
+            <stop offset="100%"
+                  stop-color="{color[1]}"/>
+
+        </linearGradient>
+
+
+        <!--
+            Very soft top highlight.
+            Much weaker than the original version.
+        -->
+        <linearGradient id="highlightGradient"
+                        x1="0"
+                        y1="0"
+                        x2="0"
+                        y2="1">
+
+            <stop offset="0%"
+                  stop-color="#FFFFFF"
+                  stop-opacity="0.08"/>
+
+            <stop offset="60%"
+                  stop-color="#FFFFFF"
+                  stop-opacity="0.02"/>
+
+            <stop offset="100%"
+                  stop-color="#FFFFFF"
+                  stop-opacity="0"/>
+
+        </linearGradient>
+
+    </defs>
+
+
+    <!-- =====================================================
+         Base badge
+         ===================================================== -->
+
+    <rect x="0"
+          y="0"
+          width="{total_width}"
+          height="20"
+          rx="3.5"
+          fill="#555555"/>
+
+
+    <!-- =====================================================
+         Label section
+         ===================================================== -->
+
+    <path
+        d="
+            M 3.5 0
+            H {label_width}
+            V 20
+            H 3.5
+            A 3.5 3.5 0 0 1 0 16.5
+            V 3.5
+            A 3.5 3.5 0 0 1 3.5 0
+            Z
+        "
+        fill="url(#labelGradient)"
+    />
+
+
+    <!-- =====================================================
+         Message section
+         ===================================================== -->
+
+    <path
+        d="
+            M {label_width} 0
+            H {total_width - 3.5}
+            A 3.5 3.5 0 0 1 {total_width} 3.5
+            V 16.5
+            A 3.5 3.5 0 0 1 {total_width - 3.5} 20
+            H {label_width}
+            Z
+        "
+        fill="url(#messageGradient)"
+    />
+
+
+    <!-- =====================================================
+         Soft highlight
+         ===================================================== -->
+
+    <rect x="0"
+          y="0"
+          width="{total_width}"
+          height="10"
+          rx="3.5"
+          fill="url(#highlightGradient)"/>
+
+
+    <!-- =====================================================
+         Text
+         ===================================================== -->
+
+    <g fill="#FFFFFF"
        text-anchor="middle"
        font-family="Verdana,DejaVu Sans,sans-serif"
-       font-size="11">
+       font-size="11"
+       font-weight="400">
 
         <text x="{label_width / 2}"
-              y="15">
+              y="14.5">
+
             {html.escape(label)}
+
         </text>
 
+
         <text x="{label_width + message_width / 2}"
-              y="15">
+              y="14.5">
+
             {html.escape(message)}
+
         </text>
 
     </g>
 
+
 </svg>
 '''
 
+
+# ============================================================
+# Standard availability badges
+# ============================================================
 
 def write_badge(
     path: Path,
@@ -115,11 +309,17 @@ def write_badge(
         else "unavailable"
     )
 
-    color = (
-        SHIELDS_COLORS["green"]
-        if available
-        else SHIELDS_COLORS["critical"]
-    )
+    if available:
+
+        color = get_gradient_colors(
+            "green"
+        )
+
+    else:
+
+        color = get_gradient_colors(
+            "critical"
+        )
 
     path.parent.mkdir(
         parents=True,
@@ -169,9 +369,9 @@ def write_status_badge(
 
         message = "draft"
 
-        color = SHIELDS_COLORS[
+        color = get_gradient_colors(
             "important"
-        ]
+        )
 
         message_width = 50
 
@@ -179,9 +379,9 @@ def write_status_badge(
 
         message = "validated"
 
-        color = SHIELDS_COLORS[
+        color = get_gradient_colors(
             "green"
-        ]
+        )
 
         message_width = 68
 
@@ -223,15 +423,15 @@ def write_draft_pages_badge(
 
     if draft_count > 0:
 
-        color = SHIELDS_COLORS[
+        color = get_gradient_colors(
             "important"
-        ]
+        )
 
     else:
 
-        color = SHIELDS_COLORS[
+        color = get_gradient_colors(
             "inactive"
-        ]
+        )
 
     message = str(draft_count)
 
@@ -280,8 +480,13 @@ def create_redirect(
     <meta charset="utf-8">
     <title>File unavailable</title>
 </head>
+
 <body>
-    <p>{html.escape(unavailable_message)}</p>
+
+<p>
+    {html.escape(unavailable_message)}
+</p>
+
 </body>
 </html>
 """
@@ -294,39 +499,60 @@ def create_redirect(
 
         content = f"""<!doctype html>
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8">
+
     <title>
         Download {html.escape(target_file.name)}
     </title>
+
 </head>
 
 <body>
 
 <p>
+
     Downloading
+
     <strong>
         {html.escape(target_file.name)}
     </strong>...
+
 </p>
 
+
 <script>
+
 (function () {{
+
     const url = {target_url!r};
+
     const filename = {target_file.name!r};
 
-    const link = document.createElement("a");
+
+    const link =
+        document.createElement("a");
+
 
     link.href = url;
+
     link.download = filename;
+
 
     document.body.appendChild(link);
 
+
     link.click();
 
+
     link.remove();
+
 }})();
+
 </script>
+
 
 <noscript>
 
@@ -343,6 +569,7 @@ def create_redirect(
 </p>
 
 </noscript>
+
 
 </body>
 </html>
@@ -373,15 +600,27 @@ def create_page_redirect(
 
         content = f"""<!doctype html>
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8">
-    <title>File unavailable</title>
+
+    <title>
+        File unavailable
+    </title>
+
 </head>
+
 <body>
-    <p>
-        {html.escape(unavailable_message)}
-    </p>
+
+<p>
+
+    {html.escape(unavailable_message)}
+
+</p>
+
 </body>
+
 </html>
 """
 
@@ -393,7 +632,9 @@ def create_page_redirect(
 
         content = f"""<!doctype html>
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8">
 
     <meta http-equiv="refresh"
@@ -408,10 +649,13 @@ def create_page_redirect(
 <body>
 
 <p>
+
     Opening verification report...
+
 </p>
 
 </body>
+
 </html>
 """
 
@@ -490,11 +734,13 @@ def main():
     # Global Draft page counter.
     draft_pages = 0
 
+
     for category in CATEGORIES:
 
         category_dir = (
             ROOT_DIR / category
         )
+
 
         if not category_dir.is_dir():
 
@@ -505,9 +751,11 @@ def main():
 
             continue
 
+
         print(
             f"\nCategory: {category}"
         )
+
 
         for device_dir in sorted(
             category_dir.iterdir()
@@ -516,55 +764,60 @@ def main():
             if not device_dir.is_dir():
                 continue
 
+
             device = (
                 device_dir.name
             )
+
 
             print(
                 f"  Checking: {device}"
             )
 
+
             badges_dir = (
                 device_dir / "badges"
             )
+
 
             # ==================================================
             # Page status
             #
             # Generated for ALL categories.
-            #
-            # <!-- PAGE_STATUS: DRAFT -->
-            #     -> important / orange
-            #
-            # No marker
-            #     -> green
             # ==================================================
 
             readme_file = (
                 device_dir / "README.md"
             )
 
+
             is_draft = is_page_draft(
                 readme_file
             )
+
 
             write_status_badge(
                 badges_dir / "status.svg",
                 is_draft,
             )
 
+
             if is_draft:
+
                 draft_pages += 1
+
 
             print(
                 f"    Status: "
                 f"{'draft' if is_draft else 'validated'}"
             )
 
+
             # ==================================================
             # ICC / HTML badges
             #
             # Generated ONLY for:
+            #
             #     monitors
             #     laptops
             # ==================================================
@@ -574,6 +827,9 @@ def main():
                 in FILE_BADGE_CATEGORIES
             ):
 
+                # Only files directly inside
+                # the device directory.
+
                 icc_file = find_first_file(
                     device_dir,
                     {
@@ -582,12 +838,14 @@ def main():
                     },
                 )
 
+
                 report_file = find_first_file(
                     device_dir,
                     {
                         ".html",
                     },
                 )
+
 
                 # --------------------------------------------------
                 # ICC badge
@@ -601,6 +859,7 @@ def main():
                     84,
                 )
 
+
                 # --------------------------------------------------
                 # ICC download redirect
                 # --------------------------------------------------
@@ -610,6 +869,7 @@ def main():
                     icc_file,
                     "ICC profile is not available.",
                 )
+
 
                 # --------------------------------------------------
                 # Verification report badge
@@ -623,6 +883,7 @@ def main():
                     91,
                 )
 
+
                 # --------------------------------------------------
                 # Verification report redirect
                 # --------------------------------------------------
@@ -633,15 +894,18 @@ def main():
                     "Verification report is not available.",
                 )
 
+
                 print(
                     f"    ICC: "
                     f"{icc_file.name if icc_file else 'unavailable'}"
                 )
 
+
                 print(
                     f"    HTML: "
                     f"{report_file.name if report_file else 'unavailable'}"
                 )
+
 
             else:
 
@@ -653,6 +917,7 @@ def main():
                 remove_file_badges(
                     device_dir
                 )
+
 
     # ============================================================
     # Global Draft pages badge
@@ -673,9 +938,11 @@ def main():
         draft_pages,
     )
 
+
     print(
         f"\nTotal Draft pages: {draft_pages}"
     )
+
 
     print(
         f"Generated: "
