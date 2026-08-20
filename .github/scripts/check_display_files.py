@@ -156,6 +156,46 @@ def create_redirect(
         encoding="utf-8",
     )
 
+def create_page_redirect(
+    redirect_path: Path,
+    target_file: Path | None,
+    unavailable_message: str,
+):
+    redirect_path.parent.mkdir(parents=True, exist_ok=True)
+
+    if target_file is None:
+        content = f"""<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>File unavailable</title>
+</head>
+<body>
+    <p>{html.escape(unavailable_message)}</p>
+</body>
+</html>
+"""
+    else:
+        target_url = f"../{target_file.name}"
+
+        content = f"""<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh"
+          content="0; url={html.escape(target_url, quote=True)}">
+    <title>Verification report</title>
+</head>
+<body>
+    <p>Opening verification report...</p>
+</body>
+</html>
+"""
+
+    redirect_path.write_text(
+        content,
+        encoding="utf-8",
+    )
 
 def find_first_file(device_dir: Path, extensions: set[str]):
 
@@ -235,7 +275,7 @@ def main():
             )
 
             # Verification redirect
-            create_redirect(
+            create_page_redirect(
                 badges_dir / "report.html",
                 report_file,
                 "Verification report is not available.",
