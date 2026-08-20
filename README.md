@@ -12,7 +12,9 @@ This repository contains display settings, ICC/ICM color profiles, verification 
 [![TVs](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/tv?type=dir&label=TVs&color=informational)](https://github.com/xdenb43/display-configuration-database/tree/main/tv)
 
 <div align="right">
-  <img src=".meta/draft-pages.svg" alt="Draft pages">
+  <img src=".meta/draft-pages.svg"
+       alt="Draft pages"
+       style="pointer-events: none;">
 </div>
 
 ## Table of contents
