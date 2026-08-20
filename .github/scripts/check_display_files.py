@@ -106,31 +106,46 @@ def create_redirect(
 
     else:
 
+        # Target file is located one directory above "badges".
         target_url = f"../{target_file.name}"
 
         content = f"""<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-
-    <meta http-equiv="refresh"
-          content="0; url={html.escape(target_url, quote=True)}">
-
-    <title>Redirecting...</title>
+    <title>Download {html.escape(target_file.name)}</title>
 </head>
 
 <body>
 
+<p>
+    Downloading
+    <strong>{html.escape(target_file.name)}</strong>...
+</p>
+
+<script>
+(function () {{
+    const url = {target_url!r};
+    const filename = {target_file.name!r};
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+}})();
+</script>
+
+<noscript>
     <p>
-        Redirecting to
-        <a href="{html.escape(target_url, quote=True)}">
-            {html.escape(target_file.name)}
+        <a href="{html.escape(target_url, quote=True)}"
+           download="{html.escape(target_file.name, quote=True)}">
+            Download {html.escape(target_file.name)}
         </a>
     </p>
-
-    <script>
-        window.location.replace({target_url!r});
-    </script>
+</noscript>
 
 </body>
 </html>
