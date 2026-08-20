@@ -6,116 +6,28 @@
 
     <title>Page status: validated</title>
 
-    <defs>
-
-        <!-- Neutral graphite label -->
-        <linearGradient id="labelGradient"
-                        x1="0" y1="0"
-                        x2="0" y2="1">
-
-            <stop offset="0%"
-                  stop-color="#59616a"/>
-
-            <stop offset="100%"
-                  stop-color="#454b52"/>
-
-        </linearGradient>
-
-        <!-- Shields.io based status color -->
-        <linearGradient id="messageGradient"
-                        x1="0" y1="0"
-                        x2="0" y2="1">
-
-            <stop offset="0%"
-                  stop-color="#67AC09"/>
-
-            <stop offset="100%"
-                  stop-color="#5D9B08"/>
-
-        </linearGradient>
-
-        <!-- Subtle top highlight -->
-        <linearGradient id="highlightGradient"
-                        x1="0" y1="0"
-                        x2="0" y2="1">
-
-            <stop offset="0%"
-                  stop-color="#ffffff"
-                  stop-opacity="0.16"/>
-
-            <stop offset="55%"
-                  stop-color="#ffffff"
-                  stop-opacity="0.04"/>
-
-            <stop offset="100%"
-                  stop-color="#ffffff"
-                  stop-opacity="0"/>
-
-        </linearGradient>
-
-    </defs>
-
-    <!-- Label -->
-    <rect x="0"
-          y="0"
-          width="88"
+    <rect width="156"
           height="20"
-          rx="4"
-          fill="url(#labelGradient)"/>
+          rx="3"
+          fill="#555"/>
 
-    <!-- Status -->
     <rect x="88"
-          y="0"
           width="68"
           height="20"
-          rx="4"
-          fill="url(#messageGradient)"/>
+          fill="#67AC09"/>
 
-    <!-- Hide the inner rounded corner between segments -->
-    <rect x="84"
-          y="0"
-          width="8"
-          height="20"
-          fill="url(#labelGradient)"/>
-
-    <rect x="88"
-          y="0"
-          width="4"
-          height="20"
-          fill="url(#messageGradient)"/>
-
-    <!-- Subtle highlight -->
-    <rect x="0"
-          y="0"
-          width="156"
-          height="10"
-          rx="4"
-          fill="url(#highlightGradient)"/>
-
-    <!-- Soft outer border -->
-    <rect x="0.5"
-          y="0.5"
-          width="155"
-          height="19"
-          rx="3.5"
-          fill="none"
-          stroke="#000000"
-          stroke-opacity="0.20"/>
-
-    <!-- Text -->
-    <g fill="#ffffff"
+    <g fill="#fff"
        text-anchor="middle"
        font-family="Verdana,DejaVu Sans,sans-serif"
-       font-size="11"
-       font-weight="400">
+       font-size="11">
 
         <text x="44.0"
-              y="14.5">
+              y="15">
             Page status
         </text>
 
         <text x="122.0"
-              y="14.5">
+              y="15">
             validated
         </text>
 
