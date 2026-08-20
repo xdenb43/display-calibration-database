@@ -36,29 +36,127 @@ def create_badge(
 
     <title>{html.escape(label)}: {html.escape(message)}</title>
 
-    <rect width="{total_width}" height="20" rx="3" fill="#555"/>
+    <defs>
 
+        <!-- Neutral graphite label -->
+        <linearGradient id="labelGradient"
+                        x1="0" y1="0"
+                        x2="0" y2="1">
+
+            <stop offset="0%"
+                  stop-color="#59616a"/>
+
+            <stop offset="100%"
+                  stop-color="#454b52"/>
+
+        </linearGradient>
+
+        <!-- Status color -->
+        <linearGradient id="messageGradient"
+                        x1="0" y1="0"
+                        x2="0" y2="1">
+
+            <stop offset="0%"
+                  stop-color="{color}"
+                  stop-opacity="0.95"/>
+
+            <stop offset="100%"
+                  stop-color="{color}"
+                  stop-opacity="0.78"/>
+
+        </linearGradient>
+
+        <!-- Subtle top highlight -->
+        <linearGradient id="highlightGradient"
+                        x1="0" y1="0"
+                        x2="0" y2="1">
+
+            <stop offset="0%"
+                  stop-color="#ffffff"
+                  stop-opacity="0.16"/>
+
+            <stop offset="55%"
+                  stop-color="#ffffff"
+                  stop-opacity="0.04"/>
+
+            <stop offset="100%"
+                  stop-color="#ffffff"
+                  stop-opacity="0"/>
+
+        </linearGradient>
+
+    </defs>
+
+    <!-- Label -->
+    <rect x="0"
+          y="0"
+          width="{label_width}"
+          height="20"
+          rx="4"
+          fill="url(#labelGradient)"/>
+
+    <!-- Status -->
     <rect x="{label_width}"
+          y="0"
           width="{message_width}"
           height="20"
-          fill="{color}"/>
+          rx="4"
+          fill="url(#messageGradient)"/>
 
-    <g fill="#fff"
+    <!-- Hide the inner rounded corner between segments -->
+    <rect x="{label_width - 4}"
+          y="0"
+          width="8"
+          height="20"
+          fill="url(#labelGradient)"/>
+
+    <rect x="{label_width}"
+          y="0"
+          width="4"
+          height="20"
+          fill="url(#messageGradient)"/>
+
+    <!-- Subtle highlight -->
+    <rect x="0"
+          y="0"
+          width="{total_width}"
+          height="10"
+          rx="4"
+          fill="url(#highlightGradient)"/>
+
+    <!-- Soft outer border -->
+    <rect x="0.5"
+          y="0.5"
+          width="{total_width - 1}"
+          height="19"
+          rx="3.5"
+          fill="none"
+          stroke="#000000"
+          stroke-opacity="0.20"/>
+
+    <!-- Text -->
+    <g fill="#ffffff"
        text-anchor="middle"
        font-family="Verdana,DejaVu Sans,sans-serif"
-       font-size="11">
+       font-size="11"
+       font-weight="400">
 
         <text x="{label_width / 2}"
-              y="15">
+              y="14.5">
+
             {html.escape(label)}
+
         </text>
 
         <text x="{label_width + message_width / 2}"
-              y="15">
+              y="14.5">
+
             {html.escape(message)}
+
         </text>
 
     </g>
+
 </svg>
 '''
 
@@ -72,7 +170,12 @@ def write_badge(
 ):
 
     message = "available" if available else "unavailable"
-    color = "#2ea44f" if available else "#d73a49"
+
+    color = (
+        "#4caf78"
+        if available
+        else "#d46a76"
+    )
 
     path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -88,7 +191,9 @@ def write_badge(
     )
 
 
-def is_page_draft(readme_file: Path) -> bool:
+def is_page_draft(
+    readme_file: Path,
+) -> bool:
 
     if not readme_file.exists():
         return False
@@ -98,7 +203,10 @@ def is_page_draft(readme_file: Path) -> bool:
         errors="ignore",
     )
 
-    return "<!-- PAGE_STATUS: DRAFT -->" in content
+    return (
+        "<!-- PAGE_STATUS: DRAFT -->"
+        in content
+    )
 
 
 def write_status_badge(
@@ -107,15 +215,21 @@ def write_status_badge(
 ):
 
     if is_draft:
+
         message = "draft"
-        color = "#f9a825"
+        color = "#d6a64a"
         message_width = 50
+
     else:
+
         message = "validated"
-        color = "#2ea44f"
+        color = "#4caf78"
         message_width = 68
 
-    path.parent.mkdir(parents=True, exist_ok=True)
+    path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     path.write_text(
         create_badge(
@@ -135,7 +249,10 @@ def create_redirect(
     unavailable_message: str,
 ):
 
-    redirect_path.parent.mkdir(parents=True, exist_ok=True)
+    redirect_path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     if target_file is None:
 
@@ -153,20 +270,26 @@ def create_redirect(
 
     else:
 
-        target_url = f"../{target_file.name}"
+        target_url = (
+            f"../{target_file.name}"
+        )
 
         content = f"""<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Download {html.escape(target_file.name)}</title>
+    <title>
+        Download {html.escape(target_file.name)}
+    </title>
 </head>
 
 <body>
 
 <p>
     Downloading
-    <strong>{html.escape(target_file.name)}</strong>...
+    <strong>
+        {html.escape(target_file.name)}
+    </strong>...
 </p>
 
 <script>
@@ -175,22 +298,32 @@ def create_redirect(
     const filename = {target_file.name!r};
 
     const link = document.createElement("a");
+
     link.href = url;
     link.download = filename;
 
     document.body.appendChild(link);
+
     link.click();
+
     link.remove();
 }})();
 </script>
 
 <noscript>
-    <p>
-        <a href="{html.escape(target_url, quote=True)}"
-           download="{html.escape(target_file.name, quote=True)}">
-            Download {html.escape(target_file.name)}
-        </a>
-    </p>
+
+<p>
+
+<a href="{html.escape(target_url, quote=True)}"
+   download="{html.escape(target_file.name, quote=True)}">
+
+    Download
+    {html.escape(target_file.name)}
+
+</a>
+
+</p>
+
 </noscript>
 
 </body>
@@ -209,7 +342,10 @@ def create_page_redirect(
     unavailable_message: str,
 ):
 
-    redirect_path.parent.mkdir(parents=True, exist_ok=True)
+    redirect_path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     if target_file is None:
 
@@ -220,22 +356,31 @@ def create_page_redirect(
     <title>File unavailable</title>
 </head>
 <body>
-    <p>{html.escape(unavailable_message)}</p>
+    <p>
+        {html.escape(unavailable_message)}
+    </p>
 </body>
 </html>
 """
 
     else:
 
-        target_url = f"../{target_file.name}"
+        target_url = (
+            f"../{target_file.name}"
+        )
 
         content = f"""<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
+
     <meta http-equiv="refresh"
           content="0; url={html.escape(target_url, quote=True)}">
-    <title>Verification report</title>
+
+    <title>
+        Verification report
+    </title>
+
 </head>
 
 <body>
@@ -259,20 +404,28 @@ def find_first_file(
     extensions: set[str],
 ):
 
-    for file in sorted(device_dir.iterdir()):
+    for file in sorted(
+        device_dir.iterdir()
+    ):
 
         if (
             file.is_file()
-            and file.suffix.lower() in extensions
+            and file.suffix.lower()
+            in extensions
         ):
+
             return file
 
     return None
 
 
-def remove_file_badges(device_dir: Path):
+def remove_file_badges(
+    device_dir: Path,
+):
 
-    badges_dir = device_dir / "badges"
+    badges_dir = (
+        device_dir / "badges"
+    )
 
     if not badges_dir.is_dir():
         return
@@ -284,7 +437,9 @@ def remove_file_badges(device_dir: Path):
         "report.html",
     ):
 
-        file = badges_dir / filename
+        file = (
+            badges_dir / filename
+        )
 
         if file.exists():
 
@@ -299,7 +454,9 @@ def main():
 
     for category in CATEGORIES:
 
-        category_dir = ROOT_DIR / category
+        category_dir = (
+            ROOT_DIR / category
+        )
 
         if not category_dir.is_dir():
 
@@ -310,26 +467,37 @@ def main():
 
             continue
 
-        print(f"\nCategory: {category}")
+        print(
+            f"\nCategory: {category}"
+        )
 
-        for device_dir in sorted(category_dir.iterdir()):
+        for device_dir in sorted(
+            category_dir.iterdir()
+        ):
 
             if not device_dir.is_dir():
                 continue
 
-            device = device_dir.name
+            device = (
+                device_dir.name
+            )
 
             print(
                 f"  Checking: {device}"
             )
 
-            badges_dir = device_dir / "badges"
+            badges_dir = (
+                device_dir / "badges"
+            )
 
             # --------------------------------------------------
             # Page status
+            # Generated for ALL categories
             # --------------------------------------------------
 
-            readme_file = device_dir / "README.md"
+            readme_file = (
+                device_dir / "README.md"
+            )
 
             is_draft = is_page_draft(
                 readme_file
@@ -347,25 +515,37 @@ def main():
 
             # --------------------------------------------------
             # ICC / HTML badges
-            # Only for selected categories
+            # Generated ONLY for:
+            # monitors
+            # laptops
             # --------------------------------------------------
 
-            if category in FILE_BADGE_CATEGORIES:
+            if (
+                category
+                in FILE_BADGE_CATEGORIES
+            ):
 
                 # Only files directly inside
                 # the device directory.
 
                 icc_file = find_first_file(
                     device_dir,
-                    {".icc", ".icm"},
+                    {
+                        ".icc",
+                        ".icm",
+                    },
                 )
 
                 report_file = find_first_file(
                     device_dir,
-                    {".html"},
+                    {
+                        ".html",
+                    },
                 )
 
+                # --------------------------------------------------
                 # ICC badge
+                # --------------------------------------------------
 
                 write_badge(
                     badges_dir / "icc.svg",
@@ -375,7 +555,9 @@ def main():
                     84,
                 )
 
+                # --------------------------------------------------
                 # ICC download
+                # --------------------------------------------------
 
                 create_redirect(
                     badges_dir / "icc.html",
@@ -383,7 +565,9 @@ def main():
                     "ICC profile is not available.",
                 )
 
+                # --------------------------------------------------
                 # Verification badge
+                # --------------------------------------------------
 
                 write_badge(
                     badges_dir / "report.svg",
@@ -393,7 +577,9 @@ def main():
                     91,
                 )
 
+                # --------------------------------------------------
                 # Verification report
+                # --------------------------------------------------
 
                 create_page_redirect(
                     badges_dir / "report.html",
@@ -413,8 +599,10 @@ def main():
 
             else:
 
+                # --------------------------------------------------
                 # Remove old ICC / report badges
                 # from categories where they are not allowed.
+                # --------------------------------------------------
 
                 remove_file_badges(
                     device_dir
