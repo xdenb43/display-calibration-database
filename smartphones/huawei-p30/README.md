@@ -7,7 +7,7 @@ Settings optimized for visual comfort while maintaining natural color reproducti
 
 Official product page:  <https://consumer.huawei.com/qa/phones/p302/>  
 
-[![Page status](https://img.shields.io/badge/Page%20status-validated-success)](#)
+[![Page status](badges/status.svg)](#)
 
 ## Table of contents
 

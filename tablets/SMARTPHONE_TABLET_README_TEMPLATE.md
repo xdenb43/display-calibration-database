@@ -1,10 +1,12 @@
+<!-- PAGE_STATUS: DRAFT -->
+
 # [Device Name]
 
 [Short description of the device and display.]
 
 Official product page: [URL]
 
-[![Page status](https://img.shields.io/badge/Page%20status-draft-orange)](#)
+[![Page status](badges/status.svg)](#)
 
 ## Table of contents
 

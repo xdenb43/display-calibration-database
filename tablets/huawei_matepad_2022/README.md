@@ -7,7 +7,7 @@ Settings optimized for **long-term visual comfort, readability and stable image 
 
 Official product page: <https://consumer.huawei.com/ru/tablets/matepad-2022/specs/>
 
-[![Page status](https://img.shields.io/badge/Page%20status-validated-success)](#)
+[![Page status](badges/status.svg)](#)
 
 ## Table of contents
 
