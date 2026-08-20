@@ -7,8 +7,8 @@ Calibration optimized for visual comfort using Spyder X and DisplayCAL.
 Official product page:  <https://www.dahuasecurity.com/mena/products/All-Products/Display--Control/Monitors/Gaming-Series/LM27-E331A>  
 
 [![Page status](https://img.shields.io/badge/Page%20status-validated-success)](#)
-[![ICC profile](badges/icc.svg)](badges/icc.html)
-[![Verification report](badges/report.svg)](badges/report.html)
+[![ICC profile](badges/icc.svg)](https://xdenb43.github.io/display-configuration-database/monitors/dahua-lm27-e331/badges/icc.html)
+[![Verification report](badges/report.svg)](https://xdenb43.github.io/display-configuration-database/monitors/dahua-lm27-e331/badges/report.html)
 
 ## Table of contents
 
