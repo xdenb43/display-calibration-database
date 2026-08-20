@@ -57,12 +57,10 @@ def create_badge(
                         x2="0" y2="1">
 
             <stop offset="0%"
-                  stop-color="{color}"
-                  stop-opacity="0.95"/>
+                  stop-color="{color[0]}"/>
 
             <stop offset="100%"
-                  stop-color="{color}"
-                  stop-opacity="0.78"/>
+                  stop-color="{color[1]}"/>
 
         </linearGradient>
 
@@ -143,16 +141,12 @@ def create_badge(
 
         <text x="{label_width / 2}"
               y="14.5">
-
             {html.escape(label)}
-
         </text>
 
         <text x="{label_width + message_width / 2}"
               y="14.5">
-
             {html.escape(message)}
-
         </text>
 
     </g>
@@ -169,15 +163,27 @@ def write_badge(
     message_width: int,
 ):
 
-    message = "available" if available else "unavailable"
-
-    color = (
-        "#4caf78"
+    message = (
+        "available"
         if available
-        else "#d46a76"
+        else "unavailable"
     )
 
-    path.parent.mkdir(parents=True, exist_ok=True)
+    if available:
+        color = (
+            "#4CAF50",
+            "#43A047",
+        )
+    else:
+        color = (
+            "#F44336",
+            "#E53935",
+        )
+
+    path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     path.write_text(
         create_badge(
@@ -217,13 +223,23 @@ def write_status_badge(
     if is_draft:
 
         message = "draft"
-        color = "#d6a64a"
+
+        color = (
+            "#FFC107",
+            "#FFB300",
+        )
+
         message_width = 50
 
     else:
 
         message = "validated"
-        color = "#4caf78"
+
+        color = (
+            "#4CAF50",
+            "#43A047",
+        )
+
         message_width = 68
 
     path.parent.mkdir(
