@@ -35,13 +35,7 @@ project/
 ├── tablets/
 └── tv/
 ```
-
-Each device directory is self-contained and may include:  
-- Device documentation (`README.md`)  
-- Display configuration and recommended settings  
-- ICC/ICM color profile (if applicable)
-- Display verification report (if applicable)
-- Additional measurements, notes or images (optional)
+Each device directory is self-contained and may include documentation, display configuration, color profiles, verification reports, and additional measurements or notes.
 
 ## Device categories
 
