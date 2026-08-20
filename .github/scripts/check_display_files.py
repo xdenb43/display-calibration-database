@@ -19,6 +19,13 @@ FILE_BADGE_CATEGORIES = {
 
 
 # ============================================================
+# Global generated metadata
+# ============================================================
+
+META_DIR = ROOT_DIR / ".meta"
+
+
+# ============================================================
 # Shields.io palette
 #
 # Source:
@@ -31,6 +38,7 @@ FILE_BADGE_CATEGORIES = {
 # Aliases:
 # important    -> orange
 # critical     -> red
+# informational -> blue
 # ============================================================
 
 SHIELDS_COLORS = {
@@ -46,7 +54,7 @@ def darken_color(
 ) -> str:
 
     """
-    Darken a HEX color by the specified factor.
+    Darken a HEX color.
 
     factor = 1.00 -> unchanged
     factor = 0.90 -> 10% darker
@@ -334,6 +342,51 @@ def write_status_badge(
     )
 
 
+def write_draft_pages_badge(
+    path: Path,
+    draft_count: int,
+):
+
+    """
+    Generate the global Draft pages badge.
+
+    This badge is stored in:
+
+        .meta/draft-pages.svg
+
+    It uses the Shields.io 'important' color
+    for consistency with the Page status / Draft badge.
+    """
+
+    color = get_gradient_colors(
+        "important"
+    )
+
+    message = str(draft_count)
+
+    # Width suitable for a numeric counter.
+    message_width = max(
+        32,
+        22 + len(message) * 7,
+    )
+
+    path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    path.write_text(
+        create_badge(
+            "Draft pages",
+            message,
+            color,
+            76,
+            message_width,
+        ),
+        encoding="utf-8",
+    )
+
+
 def create_redirect(
     redirect_path: Path,
     target_file: Path | None,
@@ -543,6 +596,9 @@ def remove_file_badges(
 
 def main():
 
+    # Global counter for all Draft pages.
+    draft_pages = 0
+
     for category in CATEGORIES:
 
         category_dir = (
@@ -605,6 +661,9 @@ def main():
                 badges_dir / "status.svg",
                 is_draft,
             )
+
+            if is_draft:
+                draft_pages += 1
 
             print(
                 f"    Status: "
@@ -706,6 +765,31 @@ def main():
                 remove_file_badges(
                     device_dir
                 )
+
+    # ============================================================
+    # Global Draft pages badge
+    #
+    # Generated after ALL categories have been processed.
+    #
+    # Example:
+    #
+    # .meta/draft-pages.svg
+    #
+    # ============================================================
+
+    write_draft_pages_badge(
+        META_DIR / "draft-pages.svg",
+        draft_pages,
+    )
+
+    print(
+        f"\nTotal Draft pages: {draft_pages}"
+    )
+
+    print(
+        f"Generated: "
+        f"{META_DIR / 'draft-pages.svg'}"
+    )
 
 
 if __name__ == "__main__":
