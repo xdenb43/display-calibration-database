@@ -6,27 +6,125 @@
 
     <title>ICC profile: available</title>
 
-    <rect width="174" height="20" rx="3" fill="#555"/>
+    <defs>
 
+        <!-- Neutral graphite label -->
+        <linearGradient id="labelGradient"
+                        x1="0" y1="0"
+                        x2="0" y2="1">
+
+            <stop offset="0%"
+                  stop-color="#59616a"/>
+
+            <stop offset="100%"
+                  stop-color="#454b52"/>
+
+        </linearGradient>
+
+        <!-- Status color -->
+        <linearGradient id="messageGradient"
+                        x1="0" y1="0"
+                        x2="0" y2="1">
+
+            <stop offset="0%"
+                  stop-color="#4caf78"
+                  stop-opacity="0.95"/>
+
+            <stop offset="100%"
+                  stop-color="#4caf78"
+                  stop-opacity="0.78"/>
+
+        </linearGradient>
+
+        <!-- Subtle top highlight -->
+        <linearGradient id="highlightGradient"
+                        x1="0" y1="0"
+                        x2="0" y2="1">
+
+            <stop offset="0%"
+                  stop-color="#ffffff"
+                  stop-opacity="0.16"/>
+
+            <stop offset="55%"
+                  stop-color="#ffffff"
+                  stop-opacity="0.04"/>
+
+            <stop offset="100%"
+                  stop-color="#ffffff"
+                  stop-opacity="0"/>
+
+        </linearGradient>
+
+    </defs>
+
+    <!-- Label -->
+    <rect x="0"
+          y="0"
+          width="90"
+          height="20"
+          rx="4"
+          fill="url(#labelGradient)"/>
+
+    <!-- Status -->
     <rect x="90"
+          y="0"
           width="84"
           height="20"
-          fill="#2ea44f"/>
+          rx="4"
+          fill="url(#messageGradient)"/>
 
-    <g fill="#fff"
+    <!-- Hide the inner rounded corner between segments -->
+    <rect x="86"
+          y="0"
+          width="8"
+          height="20"
+          fill="url(#labelGradient)"/>
+
+    <rect x="90"
+          y="0"
+          width="4"
+          height="20"
+          fill="url(#messageGradient)"/>
+
+    <!-- Subtle highlight -->
+    <rect x="0"
+          y="0"
+          width="174"
+          height="10"
+          rx="4"
+          fill="url(#highlightGradient)"/>
+
+    <!-- Soft outer border -->
+    <rect x="0.5"
+          y="0.5"
+          width="173"
+          height="19"
+          rx="3.5"
+          fill="none"
+          stroke="#000000"
+          stroke-opacity="0.20"/>
+
+    <!-- Text -->
+    <g fill="#ffffff"
        text-anchor="middle"
        font-family="Verdana,DejaVu Sans,sans-serif"
-       font-size="11">
+       font-size="11"
+       font-weight="400">
 
         <text x="45.0"
-              y="15">
+              y="14.5">
+
             ICC profile
+
         </text>
 
         <text x="132.0"
-              y="15">
+              y="14.5">
+
             available
+
         </text>
 
     </g>
+
 </svg>
