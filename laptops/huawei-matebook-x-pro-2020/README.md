@@ -9,8 +9,8 @@ Calibration optimized for visual comfort using Spyder X and DisplayCAL.
 Official product page:  <https://consumer.huawei.com/ie/laptops/matebook-x-pro-2020/specs/>  
 
 [![Page status](https://img.shields.io/badge/Page%20status-draft-orange)](#)
-[![ICC profile](../../badges/laptops/matebook-x-pro-2020/icc.svg)](../../badges/laptops/matebook-x-pro-2020/icc.html)
-[![Verification report](../../badges/laptops/matebook-x-pro-2020/report.svg)](../../badges/laptops/matebook-x-pro-2020/report.html)
+[![ICC profile](badges/icc.svg)](badges/icc.html)
+[![Verification report](badges/report.svg)](badges/report.html)
 
 ## Table of contents
 
