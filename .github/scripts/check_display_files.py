@@ -21,7 +21,7 @@ FILE_BADGE_CATEGORIES = {
 def create_badge(
     label: str,
     message: str,
-    color: tuple[str, str],
+    color: str,
     label_width: int,
     message_width: int,
 ) -> str:
@@ -155,6 +155,48 @@ def create_badge(
 '''
 
 
+def get_shields_gradient(
+    color_name: str,
+) -> tuple[str, str]:
+
+    """
+    Approximate the Shields.io named color
+    with a slightly darker second stop for our
+    custom badge gradient.
+
+    Named colors used by the project:
+
+        green      -> validated / available
+        important  -> draft
+        critical   -> unavailable
+
+    The first color corresponds to the Shields
+    named color, while the second one provides
+    the darker gradient stop.
+    """
+
+    colors = {
+
+        "green": (
+            "#97CA00",
+            "#7FAE00",
+        ),
+
+        "important": (
+            "#FE7D37",
+            "#E96824",
+        ),
+
+        "critical": (
+            "#E05D44",
+            "#C94B35",
+        ),
+
+    }
+
+    return colors[color_name]
+
+
 def write_badge(
     path: Path,
     label: str,
@@ -169,27 +211,15 @@ def write_badge(
         else "unavailable"
     )
 
-    # Project badge palette:
-    #
-    # Available:
-    #     #2E9B6F -> #25865F
-    #
-    # Unavailable:
-    #     #D65A67 -> #C44856
+    color_name = (
+        "green"
+        if available
+        else "critical"
+    )
 
-    if available:
-
-        color = (
-            "#2E9B6F",
-            "#25865F",
-        )
-
-    else:
-
-        color = (
-            "#D65A67",
-            "#C44856",
-        )
+    color = get_shields_gradient(
+        color_name
+    )
 
     path.parent.mkdir(
         parents=True,
@@ -231,21 +261,12 @@ def write_status_badge(
     is_draft: bool,
 ):
 
-    # Project badge palette:
-    #
-    # Validated:
-    #     #2E9B6F -> #25865F
-    #
-    # Draft:
-    #     #E0A126 -> #C88D18
-
     if is_draft:
 
         message = "draft"
 
-        color = (
-            "#E0A126",
-            "#C88D18",
+        color = get_shields_gradient(
+            "important"
         )
 
         message_width = 50
@@ -254,9 +275,8 @@ def write_status_badge(
 
         message = "validated"
 
-        color = (
-            "#2E9B6F",
-            "#25865F",
+        color = get_shields_gradient(
+            "green"
         )
 
         message_width = 68
