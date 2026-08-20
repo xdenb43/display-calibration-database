@@ -35,7 +35,12 @@ project/
 ├── tablets/
 └── tv/
 ```
-Each device directory is self-contained and may include documentation, display configuration, color profiles, verification reports, and additional measurements or notes.
+Each device directory is self-contained and may include  
+- documentation  
+- display configuration  
+- color profiles  
+- verification reports  
+- additional measurements or notes  
 
 ## Device categories
 
