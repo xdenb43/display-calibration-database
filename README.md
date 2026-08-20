@@ -5,34 +5,13 @@ Database of display configurations, calibration data and measurements focused on
 
 This repository contains display settings, ICC/ICM color profiles, verification reports, measurements and engineering documentation for monitors, laptops, smartphones, tablets and TVs.
 
-<table width="100%">
-<tr>
-<td align="left">
-
-<a href="https://github.com/xdenb43/display-configuration-database/tree/main/monitors">
-<img src="https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/monitors?type=dir&label=Monitors">
-</a>
-<a href="https://github.com/xdenb43/display-configuration-database/tree/main/laptops">
-<img src="https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/laptops?type=dir&label=Laptops">
-</a>
-<a href="https://github.com/xdenb43/display-configuration-database/tree/main/smartphones">
-<img src="https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/smartphones?type=dir&label=Smartphones">
-</a>
-<a href="https://github.com/xdenb43/display-configuration-database/tree/main/tablets">
-<img src="https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/tablets?type=dir&label=Tablets">
-</a>
-<a href="https://github.com/xdenb43/display-configuration-database/tree/main/tv">
-<img src="https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/tv?type=dir&label=TVs">
-</a>
-
-</td>
-
-<td align="right">
-<img src=".meta/draft-pages.svg" alt="Draft pages">
-</td>
-
-</tr>
-</table>
+[![Monitors](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/monitors?type=dir&label=Monitors&color=informational)](https://github.com/xdenb43/display-configuration-database/tree/main/monitors)
+[![Laptops](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/laptops?type=dir&label=Laptops&color=informational)](https://github.com/xdenb43/display-configuration-database/tree/main/laptops)
+[![Smartphones](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/smartphones?type=dir&label=Smartphones&color=informational)](https://github.com/xdenb43/display-configuration-database/tree/main/smartphones)
+[![Tablets](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/tablets?type=dir&label=Tablets&color=informational)](https://github.com/xdenb43/display-configuration-database/tree/main/tablets)
+[![TVs](https://img.shields.io/github/directory-file-count/xdenb43/display-configuration-database/tv?type=dir&label=TVs&color=informational)](https://github.com/xdenb43/display-configuration-database/tree/main/tv)
+&nbsp;&nbsp;│&nbsp;&nbsp;
+[![Draft pages](.meta/draft-pages.svg)](#)
 
 ## Table of contents
 
