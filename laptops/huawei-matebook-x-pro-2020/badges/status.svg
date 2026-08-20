@@ -21,16 +21,16 @@
 
         </linearGradient>
 
-        <!-- Status color -->
+        <!-- Shields.io based status color -->
         <linearGradient id="messageGradient"
                         x1="0" y1="0"
                         x2="0" y2="1">
 
             <stop offset="0%"
-                  stop-color="#FE7D37"/>
+                  stop-color="#EA7233"/>
 
             <stop offset="100%"
-                  stop-color="#E96824"/>
+                  stop-color="#D3672E"/>
 
         </linearGradient>
 
